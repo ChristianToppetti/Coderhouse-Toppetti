@@ -24,21 +24,22 @@ li {
 }
 
 .flex { display: flex}
-.flexcol { flex-direction: column;}
+.flexcol { display:flex; flex-direction: column;}
 .flexwrap { flex-wrap: wrap;}
 .bgc1 { background-color:#e4e4e4}
-.bgc2 { background-color: #383838;}
+.bgc2 { background-color: rgb(61, 61, 61);}
 .shadow { box-shadow: 0px 4px 4px 0px #000000; }
 .bordernone {border: none;}
 
 .textbtn {
+    display: inline-block;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 1rem;
     color: black;
+    text-align: center;
 }
 .textbtn--selected { font-weight: bold;}
-.txtcw {color: white;}
-.txtcb {color: black;}
+.textwhite {color: white;}
 
 .buttons {
     background-clip: padding-box;
@@ -85,8 +86,9 @@ li {
     position: absolute;
     box-sizing: content-box;
     padding: 0.5rem 2rem;
-    border-radius: 0.5rem;
-    background-color: rgb(0, 235, 252);
+    border-radius: 4px;
+    background-color: rgb(68, 68, 68);
+    color: white;
 }
 
 .grid {
@@ -115,10 +117,7 @@ li {
     color: rgb(40, 40, 40);
     grid-row: 1/2;
 }
-.header__cart {
-    grid-area: 2/3 / 3/4;
-    justify-self: center;
-}
+
 .header__account {
     grid-area: 1/3 / 2/4;
 
@@ -129,9 +128,16 @@ li {
 .nav {
     grid-area: nav;
     justify-content: end;
-    padding: 1rem 1rem;
+    align-items: center;
     margin-bottom: 2rem;
-    gap: 2rem;
+}
+.nav__navitems { display: block; }
+.nav__navitems__mobile { display: none; }
+
+.nav .nav__cart {
+    color: white;
+    font-size:2.3rem;
+    margin-right: 1.5rem;
 }
 
 .footer {
@@ -233,11 +239,15 @@ li {
     /* NAV */
     .nav { justify-content: center;}
     .navbtn { width: 100%; text-align: center; margin-bottom: 0.5rem;}
-    
+    .nav__navitems { display: block; }
+    .nav__navitems__mobile { display: none; }
+
+
     /* MAIN INDEX */
     .main-index__hero { gap: 0.5rem 0.5rem;}
     .main-index__bestsellers__itemscont { gap: 0.5rem 0.5rem;}
     .main-index__sale__itemscont { gap: 0.5rem 0.5rem;}
+
 
     /* MAIN CONTACTO */
     .main-contacto__contactinfo { flex-basis: 100%; word-break: break-all;}
@@ -250,7 +260,16 @@ li {
 
     /* NAV */
     .nav {flex-wrap: wrap; }
-    
+    .nav__navitems {
+        display: flex; flex-wrap: wrap;
+        visibility: visible;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav__navitems { display: none; }
+    .nav__navitems__mobile { display: block; }
+
+
     /* MAIN INDEX*/
     .main-index__hero {
         display: flex; flex-direction: column;
