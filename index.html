@@ -7,26 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Indra</title>
         
+        <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
         <link rel="shortcut icon" href="./multimedia/favicon.png">
         <link rel="stylesheet" href="./css/style.css">
     </head>
 
     <body>
-        <div class="grid">
+        <div class="grid bgc1">
             <header class="header bgc1">
-                <div class="header__logo">
-                    <a href="#"><img src="./multimedia/logo.webp" width="500px" height="50px" alt="LOGOIMG"></a>
+                <a class="header__logo" href="#">
+                    <h1>INDRA</h1>
+                </a>
+                <div class="header__account flex">
+                    <a class="textbtn" href="#">Iniciar sesion</a> 
+                    <a class="textbtn" href="#">Crear cuenta</a> 
                 </div>
             </header>
 
-            <nav class="nav flex bgc1 shadow">
-                <a class="text text--selected" href="#">INICIO</a>
-                <a class="text" href="#">PRODUCTOS</a>
-                <a class="text" href="#">CONTACTO</a>
-                <a class="text" href="#">POLITICAS DE DEVOLUCION</a>
+            <nav class="nav flex bgc2 shadow">
+                <a class="textbtn textbtn--selected txtcw" href="#">INICIO</a>
+                <a class="textbtn txtcw" href="#">PRODUCTOS</a>
+                <a class="textbtn txtcw" href="./pages/contacto.html">CONTACTO</a>
+                <a class="textbtn txtcw" href="#">POLITICAS DE DEVOLUCION</a>
             </nav>
 
-            <main class="main-index flex flexcol margtop2">
+            <main class="main-index flex flexcol">
                 <section class="main-index__hero">
                     <div class="main-index__hero__carousel">
                         <a href="#"><img src="./multimedia/carrusel.jpg" alt="IMG"></a>
@@ -41,10 +46,10 @@
                     <input class="buttons" type="button" value="CALZADO">
                 </section>
 
-                <section class="main-index__bestsellers margtop2">
+                <section class="main-index__bestsellers">
                     <div class="separator flex">
                         <div class="separator__line"></div>
-                        <p class="separator__title">DESTACADOS</p>
+                        <h2 class="separator__title">DESTACADOS</h2>
                         <div class="separator__line"></div>
                     </div>
 
@@ -85,10 +90,10 @@
                     <input class="buttons" type="button" value="VER TODOS LOS PRODUCTOS">
                 </section>
 
-                <section class="main-index__sale margtop2">
+                <section>
                     <div class="separator flex">
                         <div class="separator__line"></div>
-                        <p class="separator__title">OFERTAS</p>
+                        <h2 class="separator__title">OFERTAS</h2>
                         <div class="separator__line"></div>
                     </div>
 
@@ -109,7 +114,7 @@
                 </section>
             </main> 
 
-            <footer class="footer bgc2 margtop2">
+            <footer class="footer bgc2">
                 <a class="text text--selected" href="#">INICIO</a>
                 <a class="text" href="#">PRODUCTOS</a>
                 <a class="text" href="#">CONTACTO</a>

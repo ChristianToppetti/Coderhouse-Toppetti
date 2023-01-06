@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>#</title>
 
-    <link rel="shortcut icon" href="../multimedia/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+        <link rel="shortcut icon" href="../img/favicon.png">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
 
-<body>
-</body>
+    <body>
+        <div class="grid bgc1">
+            <header class="header bgc1">
+                <div class="header__logo">
+                    <a href="#">
+                        <img src="../multimedia/logo.webp" width="500px" height="50px" alt="LOGOIMG">
+                        <h1>INDRA</h1>
+                    </a>
+                </div>
+            </header>
+
+            <nav class="nav flex bgc1 shadow">
+                <a class="textbtn" href="#">INICIO</a>
+                <a class="textbtn" href="#">PRODUCTOS</a>
+                <a class="textbtn textbtn--selected" href="./pages/contacto.html">CONTACTO</a>
+                <a class="textbtn" href="#">POLITICAS DE DEVOLUCION</a>
+            </nav>
+
+            <main class="main-contacto flex flexwrap">
+                <div class="separator flex">
+                    <div class="separator__line"></div>
+                    <h2 class="separator__title">CONTACTO</h2>
+                    <div class="separator__line"></div>
+                </div>
+
+                <section class="main-contacto__contactinfo flex flexcol">
+                    <ul>
+                        <li><h3>Contactanos</h3></li>
+                        <li>Tel: +54 9 11 XXXX-XXXX</li>
+                        <li>E-mail: consulta@indraindumentaria.com</a></li>
+                        <li>Instagram: <a href="#">@indraropa</a></li>
+                        <li>Facebook: <a href="#">indraropa</a></li>
+                    </ul>
+                </section>  
+
+                <section class="main-contacto__contactform">
+                    <form action="#" method="GET" enctype="text/plain">
+                        <fieldset class="flex flexcol bordernone">
+                            <input class="main-contacto__contactform__input" placeholder="Nombre" type="text" name="name" id="name" required>
+                            <input class="main-contacto__contactform__input" placeholder="Correo Electronico" type="email" name="email" id="email" required>
+                            <textarea class="main-contacto__contactform__texta" name="txta" id="txta" spellcheck="true" placeholder="O escríbenos aqui."  rows="5" minlength="20" required></textarea>
+                            <input class="buttons" type="submit" value="Enviar">
+                        </fieldset>
+                    </form>       
+                </section>
+
+                <section class="main-contacto__faq">
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h2 class="separator__title">F.A.Q</h2>
+                        <div class="separator__line"></div>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <h4 class="main-contacto__faq__qa">P: Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h4>
+                            <p class="main-contacto__faq__qa">R: Necessitatibus enim omnis, nimi nihil!</p>
+                        </li>
+                        <li>
+                            <h4 class="main-contacto__faq__qa">P: Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h4>
+                            <p class="main-contacto__faq__qa">R: Necessitatibus enim omnis, nimi nihil!</p>
+                        </li>
+                        <li>
+                            <h4 class="main-contacto__faq__qa">P: Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h4>
+                            <p class="main-contacto__faq__qa">R: Necessitatibus enim omnis, nimi nihil!</p>
+                        </li>
+                        <li>
+                            <h4 class="main-contacto__faq__qa">P: Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h4>
+                            <p class="main-contacto__faq__qa">R: Necessitatibus enim omnis, nimi nihil!</p>
+                        </li>
+                    </ul>
+                </section>
+            </main> 
+
+            <footer class="footer bgc2">
+                <a class="text text--selected" href="#">INICIO</a>
+                <a class="text" href="#">PRODUCTOS</a>
+                <a class="text" href="#">CONTACTO</a>
+                <a class="text" href="#">POLITICAS DE DEVOLUCION</a>
+            </footer>  
+        </div>
+    </body>
 </html>
