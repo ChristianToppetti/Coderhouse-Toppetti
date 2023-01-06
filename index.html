@@ -6,10 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Indra</title>
-        
-        <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
+
         <link rel="shortcut icon" href="./multimedia/favicon.png">
         <link rel="stylesheet" href="./css/style.css">
+
+        <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
@@ -18,10 +20,16 @@
                 <a class="header__logo" href="#">
                     <h1>INDRA</h1>
                 </a>
+
                 <div class="header__account flex">
                     <a class="textbtn" href="#">Iniciar sesion</a> 
                     <a class="textbtn" href="#">Crear cuenta</a> 
                 </div>
+                
+                <div class="header__cart">
+                    <a href="#"><i class="material-icons">shopping_cart</i></a>
+                </div>
+
             </header>
 
             <nav class="nav flex bgc2 shadow">
@@ -38,11 +46,12 @@
                     </div>
 
                     <a class="main-index__hero__items" href="#"><img src="./multimedia/remeras.png" alt="IMG"></a>
-                    <a class="main-index__hero__items" href="#"><img src="./multimedia/vestidonegro.png" alt="IMG"></a>
-                    <a class="main-index__hero__items" href="#"><img src="./multimedia/calzado.png" alt="IMG"></a>
-
                     <input class="buttons" type="button" value="REMERAS">
+
+                    <a class="main-index__hero__items" href="#"><img src="./multimedia/vestidonegro.png" alt="IMG"></a>
                     <input class="buttons" type="button" value="VESTIDOS">
+                    
+                    <a class="main-index__hero__items" href="#"><img src="./multimedia/calzado.png" alt="IMG"></a>
                     <input class="buttons" type="button" value="CALZADO">
                 </section>
 
@@ -84,7 +93,7 @@
                         </a>
                         <a class="shopitem flex flexcol" href="#">
                             <img src="./multimedia/remeras.png" alt="IMG">
-                            <div class="pricetag shadow text">$$$$</div>
+                            <div class="pricetag">$$$$</div>
                         </a>
                     </div>
                     <input class="buttons" type="button" value="VER TODOS LOS PRODUCTOS">
