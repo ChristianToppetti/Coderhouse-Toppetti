@@ -4,28 +4,52 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>#</title>
+        <title>Contacto</title>
 
         <link rel="shortcut icon" href="../img/favicon.png">
         <link rel="stylesheet" href="../css/style.css">
+        
+        <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
         <div class="grid bgc1">
             <header class="header bgc1">
-                <div class="header__logo">
-                    <a href="#">
-                        <img src="../multimedia/logo.webp" width="500px" height="50px" alt="LOGOIMG">
-                        <h1>INDRA</h1>
-                    </a>
-                </div>
+                <a class="header__logo" href="../index.html">
+                    <h1>INDRA</h1>
+                </a>
+
+                <a class="header__account buttons" href="#">
+                    <i class="material-icons">person</i>
+                    <span class="">Acceder</span>
+                </a> 
             </header>
 
-            <nav class="nav flex bgc1 shadow">
-                <a class="textbtn" href="#">INICIO</a>
-                <a class="textbtn" href="#">PRODUCTOS</a>
-                <a class="textbtn textbtn--selected" href="./pages/contacto.html">CONTACTO</a>
-                <a class="textbtn" href="#">POLITICAS DE DEVOLUCION</a>
+            <nav class="nav flex bgc2 shadow">
+                <div class="nav__navitems">
+                    <a class="textbtn" href="../index.html">INICIO</a>
+                    <a class="textbtn" href="#">PRODUCTOS</a>
+                    <a class="textbtn textbtn--selected" href="#">CONTACTO</a>
+                    <a class="textbtn" href="devolucion.html">POLITICA DE DEVOLUCION</a>
+                    <a class="textbtn" href="#"><i class="nav__icons material-icons">shopping_cart</i></a>
+                </div>
+                <div class="nav__navitems__mobile flex flexwrap">
+                    <a class="textbtn textbtn--selected" href="#">
+                        <i class="nav__icons material-icons">home</i>
+                        <p>INICIO</p>  
+                    </a>
+
+                    <a class="textbtn" href="#">
+                        <i class="nav__icons material-icons">apps</i>
+                        <p>PRODUCTOS</p>    
+                    </a>
+
+                    <a class="textbtn" href="#">
+                        <i class="nav__icons material-icons">shopping_cart</i>
+                        <p>CARRITO</p> 
+                    </a>
+                </div>
             </nav>
 
             <main class="main-contacto flex flexwrap">
@@ -38,10 +62,10 @@
                 <section class="main-contacto__contactinfo flexcol">
                     <ul>
                         <li><h3>Contactanos</h3></li>
-                        <li>Tel: +54 9 11 XXXX-XXXX</li>
-                        <li>E-mail: consulta@indraindumentaria.com</a></li>
-                        <li>Instagram: <a href="#">@indraropa</a></li>
-                        <li>Facebook: <a href="#">indraropa</a></li>
+                        <li><i class="material-icons">phone</i>+54 9 11 XXXX-XXXX</li>
+                        <li><i class="material-icons">email</i>consulta@indraindumentaria.com</li>
+                        <li><img src="../multimedia/icons/instagram.png" alt="INS" width="21rem"><a href="#">@indraropa</a></li>
+                        <li><img src="../multimedia/icons/facebook.png" alt="FACE" width="21rem"><a href="#">indraropa</a></li>
                     </ul>
                 </section>  
 
@@ -84,11 +108,93 @@
                 </section>
             </main> 
 
-            <footer class="footer bgc2">
-                <a class="text text--selected" href="#">INICIO</a>
-                <a class="text" href="#">PRODUCTOS</a>
-                <a class="text" href="#">CONTACTO</a>
-                <a class="text" href="#">POLITICAS DE DEVOLUCION</a>
+            <footer class="footer bgc2 flex flexwrap">
+                <section>  <!-- NAV -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NAVEGACION</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    
+                    <ul class="footer__itemscont">
+                        <li>
+                            <a class="textbtn textbtn--selected" href="#">
+                                <i class="material-icons">home</i>
+                                <p>INICIO</p>  
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">apps</i>
+                                <p>PRODUCTOS</p>    
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">contact_phone</i>
+                                <p>CONTACTO</p> 
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">library_books</i>
+                                <p>POLITICAS DE DEVOLUCION</p> 
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section> <!-- CONTACTO -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">CONTACTO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <ul class="footer__itemscont">
+                        <li><i class="material-icons">phone</i>+54 9 11 XXXX-XXXX</li>
+                        <li><i class="material-icons">email</i>consulta@indraindumentaria.com</li>
+                        <li><img src="../multimedia/icons/instagram.png" alt="INS" width="21rem"><a href="#">@indraropa</a></li>
+                        <li><img src="../multimedia/icons/facebook.png" alt="FACE" width="21rem"><a href="#">indraropa</a></li>
+                    </ul>
+                </section>
+
+                <section> <!-- METODOS DE PAGO  -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">METODOS DE PAGO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <div class="footer__itemscont flex flexwrap">
+                        <img src="../multimedia/icons/visa.png" alt="visa">
+                        <img src="../multimedia/icons/mastercard.png" alt="mastercard">
+                        <img src="../multimedia/icons/tarjetanaranja.png" alt="tarjeta-naranja">
+                        <img src="../multimedia/icons/mercadopago.png" alt="mercadopago">
+                        <img src="../multimedia/icons/pagofacil.png" alt="pagofacil">
+                        <img src="../multimedia/icons/rapipago.png" alt="rapipago>">
+                    </div>
+
+                </section>
+
+                <section> <!-- NEWSLETTER -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NEWSLETTER</h4>
+                        <div class="separator__line"></div>
+                    </div>
+
+                    <form class="footer__itemscont flex" action="#" method="GET" enctype="text/plain">
+                        <fieldset class="footer_newsletter flexcol bordernone">
+                            <legend>Suscribite a nuestro Newsettler</legend>
+                            <input placeholder="Nombre" type="text" name="name" id="name" required>
+                            <input placeholder="Correo Electronico" type="email" name="email" id="email" required>
+                            <input class="buttons" type="submit" value="Suscribirse">
+                        </fieldset>
+                    </form>  
+                </section>
+
             </footer>  
         </div>
     </body>

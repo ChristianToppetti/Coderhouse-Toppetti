@@ -29,24 +29,24 @@
 
             <nav class="nav flex bgc2 shadow">
                 <div class="nav__navitems">
-                    <a class="textbtn textbtn--selected textwhite" href="#">INICIO</a>
-                    <a class="textbtn textwhite" href="#">PRODUCTOS</a>
-                    <a class="textbtn textwhite" href="./pages/contacto.html">CONTACTO</a>
-                    <a class="textbtn textwhite" href="#">POLITICAS DE DEVOLUCION</a>
-                    <a class="textbtn textwhite" href="#"><i class="nav__icons material-icons">shopping_cart</i></a>
+                    <a class="textbtn textbtn--selected" href="#">INICIO</a>
+                    <a class="textbtn" href="#">PRODUCTOS</a>
+                    <a class="textbtn" href="./pages/contacto.html">CONTACTO</a>
+                    <a class="textbtn" href="./pages/devolucion.html">POLITICA DE DEVOLUCION</a>
+                    <a class="textbtn" href="#"><i class="nav__icons material-icons">shopping_cart</i></a>
                 </div>
                 <div class="nav__navitems__mobile flex flexwrap">
-                    <a class="textbtn textbtn--selected textwhite" href="#">
+                    <a class="textbtn textbtn--selected" href="#">
                         <i class="nav__icons material-icons">home</i>
                         <p>INICIO</p>  
                     </a>
 
-                    <a class="textbtn textwhite" href="#">
+                    <a class="textbtn" href="#">
                         <i class="nav__icons material-icons">apps</i>
                         <p>PRODUCTOS</p>    
                     </a>
 
-                    <a class="textbtn textwhite" href="#">
+                    <a class="textbtn" href="#">
                         <i class="nav__icons material-icons">shopping_cart</i>
                         <p>CARRITO</p> 
                     </a>
@@ -125,25 +125,107 @@
                     <div class="main-index__sale__itemscont flex flexwrap">
                         <a class="shopitem flexcol" href="#">
                             <img src="./multimedia/remeras.png" alt="IMG">
-                            <div class="pricetag shadow text">$$$$</div>
+                            <div class="pricetag">$$$$</div>
                         </a>
                         <a class="shopitem flexcol" href="#">
                             <img src="./multimedia/remeras.png" alt="IMG">
-                            <div class="pricetag shadow text">$$$$</div>
+                            <div class="pricetag">$$$$</div>
                         </a>
                         <a class="shopitem flexcol" href="#">
                             <img src="./multimedia/remeras.png" alt="IMG">
-                            <div class="pricetag shadow text">$$$$</div>
+                            <div class="pricetag">$$$$</div>
                         </a>
                     </div>
                 </section>
             </main> 
 
-            <footer class="footer bgc2">
-                <a class="text text--selected" href="#">INICIO</a>
-                <a class="text" href="#">PRODUCTOS</a>
-                <a class="text" href="#">CONTACTO</a>
-                <a class="text" href="#">POLITICAS DE DEVOLUCION</a>
+            <footer class="footer bgc2 flex flexwrap">
+                <section>  <!-- NAV -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NAVEGACION</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    
+                    <ul class="footer__itemscont">
+                        <li>
+                            <a class="textbtn textbtn--selected" href="#">
+                                <i class="material-icons">home</i>
+                                <p>INICIO</p>  
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">apps</i>
+                                <p>PRODUCTOS</p>    
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">contact_phone</i>
+                                <p>CONTACTO</p> 
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="#">
+                                <i class="material-icons">library_books</i>
+                                <p>POLITICAS DE DEVOLUCION</p> 
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section> <!-- CONTACTO -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">CONTACTO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <ul class="footer__itemscont">
+                        <li><i class="material-icons">phone</i>+54 9 11 XXXX-XXXX</li>
+                        <li><i class="material-icons">email</i>consulta@indraindumentaria.com</li>
+                        <li><img src="./multimedia/icons/instagram.png" alt="INS" width="21rem"><a href="#">@indraropa</a></li>
+                        <li><img src="./multimedia/icons/facebook.png" alt="FACE" width="21rem"><a href="#">indraropa</a></li>
+                    </ul>
+                </section>
+
+                <section> <!-- METODOS DE PAGO  -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">METODOS DE PAGO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <div class="footer__itemscont flex flexwrap">
+                        <img src="./multimedia/icons/visa.png" alt="visa">
+                        <img src="./multimedia/icons/mastercard.png" alt="mastercard">
+                        <img src="./multimedia/icons/tarjetanaranja.png" alt="tarjeta-naranja">
+                        <img src="./multimedia/icons/mercadopago.png" alt="mercadopago">
+                        <img src="./multimedia/icons/pagofacil.png" alt="pagofacil">
+                        <img src="./multimedia/icons/rapipago.png" alt="rapipago>">
+                    </div>
+
+                </section>
+
+                <section> <!-- NEWSLETTER -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NEWSLETTER</h4>
+                        <div class="separator__line"></div>
+                    </div>
+
+                    <form class="footer__itemscont flex" action="#" method="GET" enctype="text/plain">
+                        <fieldset class="footer_newsletter flexcol bordernone">
+                            <legend>Suscribite a nuestro Newsettler</legend>
+                            <input placeholder="Nombre" type="text" name="name" id="name" required>
+                            <input placeholder="Correo Electronico" type="email" name="email" id="email" required>
+                            <input class="buttons" type="submit" value="Suscribirse">
+                        </fieldset>
+                    </form>  
+                </section>
+
             </footer>  
         </div>
     </body>
