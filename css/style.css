@@ -194,7 +194,24 @@ li {list-style: none;margin-bottom: 1rem;}
     filter: grayscale(30%);
 }
 .main-index__hero img {min-width: 100%; min-height: 100%;}
-.main-index__hero__carousel {grid-area: span 1 / span 3; align-self: stretch; justify-self: stretch;}
+
+.main-index__hero__carousel {
+    grid-area: span 1 / span 3; 
+    align-self: stretch; 
+    justify-self: stretch;
+
+    animation-name: carousel;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-timing-function:step-end;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.main-index__hero__carousel a { 
+    visibility: hidden;
+}
 
 .main-index__hero__items {
     justify-self: stretch;
@@ -263,6 +280,25 @@ li {list-style: none;margin-bottom: 1rem;}
 /* ===== MAIN DEVOLUCION.HTML ===== */
 .main-devolucion { grid-area: main;}
 .main-devolucion__list > li {list-style:inherit; margin-left: 2rem;}
+
+/* ===== KEYFRAMES =====  */
+@keyframes carousel {
+    0% {opacity: 1; background-image: url("../multimedia/carrusel1.jpg");}
+
+    31%{opacity: 0.5;}
+    32%{opacity: 0.2;}
+
+    33%{opacity: 1; background-image: url("../multimedia/carrusel2.webp");}
+
+    64%{opacity: 0.5;}
+    65%{opacity: 0.2;}
+
+    66%{opacity: 1; background-image: url("../multimedia/carrusel3.jpg");}
+    
+    99%{opacity: 0.5;}
+    100%{opacity: 0.2;}
+}
+
 
 /* ===== MEDIA QUERIES =====  */
 @media only screen and (max-width:1280px)
