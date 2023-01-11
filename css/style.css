@@ -49,6 +49,7 @@ li {list-style: none;margin-bottom: 1rem;}
     border-radius: .25rem;
     white-space: break-spaces;
 }
+.buttons:hover {background-color: rgb(100, 100, 100);}
 
 .separator {
     justify-content: space-evenly;
@@ -185,13 +186,15 @@ li {list-style: none;margin-bottom: 1rem;}
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto auto auto;
-
-    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    
     gap: 2rem 3rem;
+    text-align: center;
     justify-items: center;
+    filter: grayscale(30%);
 }
-
-.main-index__hero__carousel {grid-area: span 1 / span 3;}
+.main-index__hero img {min-width: 100%; min-height: 100%;}
+.main-index__hero__carousel {grid-area: span 1 / span 3; align-self: stretch; justify-self: stretch;}
 
 .main-index__hero__items {
     justify-self: stretch;
