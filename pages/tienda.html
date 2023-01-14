@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Productos</title>
+
+        <link rel="shortcut icon" href="../multimedia/favicon.png">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="../js/scrollhover.js"></script>
+    </head>
+
+    <body>
+        <div class="grid bgc0">
+            <header class="header bgc1">
+                <a class="header__logo" href="#">
+                    <h1>INDRA</h1>
+                </a>
+
+                <a class="header__account buttons" href="#">
+                    <i class="material-icons">person</i>
+                    <span class="">Acceder</span>
+                </a> 
+            </header>
+
+            <nav class="nav flex bgc2 shadow">
+                <div class="nav__navitems">
+                    <a class="textbtn" href="../index.html">INICIO</a>
+                    <a class="textbtn textbtn--selected" href="#">PRODUCTOS</a>
+                    <a class="textbtn" href="contacto.html">CONTACTO</a>
+                    <a class="textbtn" href="devolucion.html">POLITICA DE DEVOLUCION</a>
+                    <a class="textbtn" href="#"><i class="nav__icons material-icons">shopping_cart</i></a>
+                </div>
+                <div class="nav__navitems__mobile flex flexwrap">   <!-- NAV para mobile -->
+                    <a class="textbtn" href="../index.html">
+                        <i class="nav__icons material-icons">home</i>
+                        <p>INICIO</p>  
+                    </a>
+
+                    <a class="textbtn textbtn--selected" href="#">
+                        <i class="nav__icons material-icons">apps</i>
+                        <p>PRODUCTOS</p>    
+                    </a>
+
+                    <a class="textbtn" href="#">
+                        <i class="nav__icons material-icons">shopping_cart</i>
+                        <p>CARRITO</p> 
+                    </a>
+                </div>
+            </nav>
+
+            <main class="main-tienda flex flexwrap">
+                <div class="separator flex">
+                    <div class="separator__line"></div>
+                    <h2 class="separator__title">PRODUCTOS</h2>
+                    <div class="separator__line"></div>
+                </div>
+                
+                <section class="main-tienda__shopitems flex flexwrap">
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item1.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item2.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item3.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item4.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item5.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item6.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item7.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item8.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item9.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item10.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item11.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item1.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item2.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item3.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item4.webp" alt="IMG">
+                    </a>
+                    <a class="shopitem flexcol" href="#">
+                        <img src="../multimedia/Items/item5.webp" alt="IMG">
+                    </a>
+                </section>
+
+                <section class="main-tienda__sidebar flexcol">
+                    <div class="main-tienda__stickycontainer flexcol">
+                        <button class="main-tienda__sidebar__btn buttons" onclick="showFilters()"><p>Filtros</p><i class="material-icons">keyboard_arrow_down</i></button> 
+                        <div id="sidebarMenu" class="main-tienda__sidebar__filters">
+                            <input type="checkbox" id="remeras" name="remeras" value="rem">
+                            <label for="remeras">Remeras</label>
+
+                            <input type="checkbox" id="vestidos" name="vestidos" value="vest">
+                            <label for="vestidos">Vestidos</label>
+
+                            <input type="checkbox" id="calzado" name="calzado" value="cal">
+                            <label for="calzado">Calzado</label>
+
+                            <input type="checkbox" id="lorem1" name="lorem1" value="rem1">
+                            <label for="lorem1">Lorem ipsum</label>
+
+                            <input type="checkbox" id="lorem2" name="lorem2" value="rem2">
+                            <label for="lorem2">Dolor sit</label>
+
+                            <input type="checkbox" id="lorem3" name="lorem3" value="rem3">
+                            <label for="lorem3">Amet consectetur</label>
+                        </div>
+                    </div>
+                </section>
+            </main> 
+
+            <footer class="footer bgc1 flex flexwrap">
+                <section>  <!-- NAV -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NAVEGACION</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    
+                    <ul class="footer__itemscont">
+                        <li>
+                            <a class="textbtn" href="../index.html">
+                                <i class="material-icons">home</i>
+                                <p>INICIO</p>  
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn textbtn--selected" href="#">
+                                <i class="material-icons">apps</i>
+                                <p>PRODUCTOS</p>    
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="contacto.html">
+                                <i class="material-icons">contact_phone</i>
+                                <p>CONTACTO</p> 
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="textbtn" href="devolucion.html">
+                                <i class="material-icons">library_books</i>
+                                <p>POLITICAS DE DEVOLUCION</p> 
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section> <!-- CONTACTO -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">CONTACTO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <ul class="footer__itemscont">
+                        <li><i class="material-icons">phone</i>+54 9 11 XXXX-XXXX</li>
+                        <li><i class="material-icons">email</i>consulta@indraropa.com</li>
+                        <li><img src="../multimedia/icons/instagram.png" alt="INS" width="21rem"><a href="#">@indraropa</a></li>
+                        <li><img src="../multimedia/icons/facebook.png" alt="FACE" width="21rem"><a href="#">indraropa</a></li>
+                    </ul>
+                </section>
+
+                <section> <!-- METODOS DE PAGO  -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">METODOS DE PAGO</h4>
+                        <div class="separator__line"></div>
+                    </div>
+                    <div class="footer__itemscont flex flexwrap">
+                        <img src="../multimedia/icons/visa.png" alt="visa">
+                        <img src="../multimedia/icons/mastercard.png" alt="mastercard">
+                        <img src="../multimedia/icons/tarjetanaranja.png" alt="tarjeta-naranja">
+                        <img src="../multimedia/icons/mercadopago.png" alt="mercadopago">
+                        <img src="../multimedia/icons/pagofacil.png" alt="pagofacil">
+                        <img src="../multimedia/icons/rapipago.png" alt="rapipago>">
+                    </div>
+
+                </section>
+
+                <section> <!-- NEWSLETTER -->
+                    <div class="separator flex">
+                        <div class="separator__line"></div>
+                        <h4 class="separator__title">NEWSLETTER</h4>
+                        <div class="separator__line"></div>
+                    </div>
+
+                    <form class="footer__itemscont flex" action="#" method="GET" enctype="text/plain">
+                        <fieldset class="footer_newsletter flexcol bordernone">
+                            <legend>Suscribite a nuestro Newsettler</legend>
+                            <input placeholder="Nombre" type="text" name="name" id="name" required>
+                            <input placeholder="Correo Electronico" type="email" name="email" id="email" required>
+                            <input class="buttons" type="submit" value="Suscribirse">
+                        </fieldset>
+                    </form>  
+                </section>
+            </footer>  
+        </div>
+    </body>
+</html>

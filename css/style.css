@@ -18,8 +18,12 @@ img {max-width: 100%; max-height: 100%;}
 
 li {list-style: none;margin-bottom: 1rem;}
 
+.bgc0 {
+    background: rgb(255,255,255);
+    background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 80%, rgba(171,171,171,1) 100%); 
+}
 .bgc1 {background-color:#e4e4e4} 
-.bgc2 {background-color: #cfcfcf;}
+.bgc2 {background-color: #474646;}
 .shadow {box-shadow: 0 3px 1px 0px rgb(26, 26, 26);}
 .bordernone {border: none;}
 
@@ -48,6 +52,7 @@ li {list-style: none;margin-bottom: 1rem;}
     border: 1px solid transparent;
     border-radius: .25rem;
     white-space: break-spaces;
+    transition: background-color 300ms;
 }
 .buttons:hover {background-color: rgb(100, 100, 100);}
 
@@ -74,23 +79,75 @@ li {list-style: none;margin-bottom: 1rem;}
     align-items: center;
     justify-content: end;
     min-width: calc((100% / 5) - (4rem / 5)); /*maximo 5 shopitems por fila */
-    max-width: 18rem;
+    max-width: calc((100% / 4) - (3rem / 4)); /*minimo 4 shopitems por fila */
+}
+.shopitem::before { /* ITEM NAME*/
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    background-color:rgba(4, 169, 109, 0.9);
+    color: white;
+    font-size: 1px;
+    content: '';
+
+    width: 100%;height: 0%;
+    transition: height 300ms, filter 1.5s;
+    filter: grayscale(100%);
+    overflow: hidden;
+}
+.shopitem:hover::before { 
+    height: 20%;
+    content: 'ITEM NAME'; 
+    font-size: 1rem;
+    font-weight: bold;
+    filter: grayscale(0%);
 }
 
-.pricetag {
+.shopitem::after {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute;
+    background-color:rgba(4, 169, 109, 0.9);
+    color: white;
+    content: '';
+    border-radius: 4px;
+
+    width: 25%; height: 3%;
+    margin-bottom: .2rem;
+    transition: height 300ms, width 300ms, margin-bottom 300ms ease-out;
+    overflow: hidden;
+}
+.shopitem:hover::after {
+    width: 35%; height: 10%;margin-bottom: 1rem;
+    content: '$$$$';
+}
+
+/* .pricetag {
     position: absolute;
     box-sizing: content-box;
     padding: 0.5rem 2rem;
     border-radius: 4px;
-    background-color: rgb(68, 68, 68);
+    background-color:#04AA6D;
     color: white;
+    margin-bottom: .5rem;
+} */
+
+
+/* ===== GRIDS =====*/
+.grid {
+    display: grid;
+    grid-template-areas:"header header header"
+                        "nav nav nav"
+                        ". main ."
+                        "footer footer footer";
+    grid-template-columns: 15% 1fr 15%;
 }
 
-.grid {
+.gridshop {
     display: grid;
     grid-template-areas:".. header header"
                         "nav nav nav"
-                        ".. main .."
+                        "main main .."
                         "footer footer footer";
     grid-template-columns: 15% 1fr 15%;
 }
@@ -100,15 +157,16 @@ li {list-style: none;margin-bottom: 1rem;}
 .header {
     grid-area: header;
     display: grid;
-    grid-template-columns: auto 1fr minmax(10%, auto);
-    max-height: 4rem;
-    margin-bottom: 1rem;
+    grid-template-columns: 15% 1fr minmax(10%, auto);
+    max-height: 5rem;
 }
 
 .header__logo {
     display: inline-block;
     color: rgb(56, 55, 55);
     grid-row: 1/2;
+    grid-column: 2;
+    padding-bottom: 1rem;
 }
 
 .header__account {
@@ -119,7 +177,6 @@ li {list-style: none;margin-bottom: 1rem;}
     align-self: flex-start;
     background-color: #4e4e4e;
     border: 1px solid transparent;
-    box-shadow: 0 3px 1px 0px rgb(26, 26, 26);
     margin: 1rem 1rem 0 0
 
 } .header__account > * {align-self: center;}
@@ -133,14 +190,11 @@ li {list-style: none;margin-bottom: 1rem;}
     margin-bottom: 2rem;
 }
 .nav__navitems {display: block;}
-.nav__navitems > * {padding: 1rem;}
+.nav__navitems > * {padding: 1rem; color: rgb(233, 233, 233);}
 .nav__navitems__mobile {display: none; padding: .5rem;}
+.nav__navitems__mobile * {color: white;}
+.nav .nav__cart {font-size:2.3rem; margin-right: 1.5rem;}
 
-.nav .nav__cart {
-    color: white;
-    font-size:2.3rem;
-    margin-right: 1.5rem;
-}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -149,17 +203,16 @@ li {list-style: none;margin-bottom: 1rem;}
     padding: 1rem 2rem 2rem 2rem;
     justify-content: center;
     gap: 1rem;
-    box-shadow: 0 3px 1px 0px rgb(26, 26, 26) inset;
+    box-shadow: 0 3px 1px 0px rgba(26, 26, 26, 0.8) inset;
 }
 .footer__itemscont {
-    background-color: rgb(201, 200, 200);
     border-radius: 4px;
     padding: 1rem;
     height: 11rem;
     width: 22rem;
 
     gap: 1rem;justify-content: center;
-    box-shadow: 0 3px 1px 0px rgb(26, 26, 26);
+    box-shadow: 0 1px 4px 0px rgba(26, 26, 26, 0.8)
 }
 .footer_newsletter {
     justify-content: space-evenly; width: 85%;
@@ -277,39 +330,106 @@ li {list-style: none;margin-bottom: 1rem;}
     padding-bottom: 0.5rem;
 }
 
+
 /* ===== MAIN DEVOLUCION.HTML ===== */
 .main-devolucion { grid-area: main;}
 .main-devolucion__list > li {list-style:inherit; margin-left: 2rem;}
 
+
+/* ===== MAIN SHOP =====*/
+.main-tienda { 
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 1rem;
+}
+
+.main-tienda .separator { grid-area: 1/1 / 2/3;}
+
+.main-tienda__shopitems {
+    border: solid;
+    grid-area: 2/2 / 4/3;
+    gap: 1rem;
+}
+
+.main-tienda__sidebar { 
+    grid-area: 2/1 / 4/2;
+    background-color: rgb(233, 233, 237);
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 2px;
+
+    position: sticky; top: 0;
+}
+.main-tienda__stickycontainer {position: sticky; top: 0;}
+
+.main-tienda__sidebar__btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+.main-tienda__sidebar__btn > i {padding-left: 1rem;}
+
+.main-tienda__sidebar__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 0;
+    padding: 1rem 0;
+    background-color: rgb(233, 233, 237);
+    border-radius: 2px;
+}
+.main-tienda__sidebar__filters.hide { display: none;}
+
+.main-tienda__sidebar__filters > input {
+    flex-basis: 10%;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.main-tienda__sidebar__filters > label { 
+    flex-basis: 80%;
+    align-self: center;
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
 /* ===== KEYFRAMES =====  */
 @keyframes carousel {
-    0% {opacity: 1; background-image: url("../multimedia/carrusel1.jpg");}
-
-    31%{opacity: 0.5;}
-    32%{opacity: 0.2;}
-
-    33%{opacity: 1; background-image: url("../multimedia/carrusel2.webp");}
-
-    64%{opacity: 0.5;}
-    65%{opacity: 0.2;}
-
-    66%{opacity: 1; background-image: url("../multimedia/carrusel3.jpg");}
-    
-    99%{opacity: 0.5;}
-    100%{opacity: 0.2;}
+    0% {background-image: url("../multimedia/carrusel1.jpg");}
+    33%{background-image: url("../multimedia/carrusel2.webp");}
+    66%{background-image: url("../multimedia/carrusel3.jpg");}
 }
 
 
 /* ===== MEDIA QUERIES =====  */
+@media((hover:none)) {
+    /* Si puede hacer hover pero pointer no es fine*/
+    
+    /*Que muestre el itemname y pricetag siempre*/
+}
+
 @media only screen and (max-width:1280px)
 {
+    .shopitem.active::before { 
+        height: 15% !important;
+        content: 'ITEM NAME'; 
+        font-size: 1rem;
+        font-weight: bold;
+        filter: grayscale(0%); opacity: 0.8;
+    }
+    .shopitem.active::after {
+        width: 35%; height: 10%;margin-bottom: 1rem;
+        content: '$$$$';
+    }
+
     .text { padding: 5px 0;}
     .grid {
         grid-template-columns: 0.5rem 7fr 0.5rem;
     }
     .buttons {padding: 0.5rem 1rem;}
+
+    /* SHOP ITEMS*/
     .shopitem {max-width: calc((100% / 3) - (1rem / 3));} /*minimo 3 shopitems por fila */
-   
 
     /* NAV */
     .nav {justify-content: center;}
@@ -330,6 +450,31 @@ li {list-style: none;margin-bottom: 1rem;}
     /* MAIN CONTACTO */
     .main-contacto__contactinfo {flex-basis: 100%; word-break: break-all;}
     .main-contacto__contactform {width: 100%;}
+
+
+    /* MAIN TIENDA*/
+    .main-tienda { height: auto;}
+    
+    .main-tienda__shopitems {
+        gap: 0.5rem 0.5rem;
+        grid-area: 3/1 / 4/3;
+    }
+    .main-tienda__sidebar { 
+        grid-area: 2/1 / 3/3;
+        border: none;
+        background-color: transparent;
+    }
+    .main-tienda__sidebar__btn {
+        justify-content: center;
+        border: 1px;
+    }
+    .main-tienda__sidebar__filters {
+        display: none;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+    }
+    .main-tienda__sidebar__filters.hide { display: grid;}
+    
 }
 
 @media only screen and (max-width:670px)
