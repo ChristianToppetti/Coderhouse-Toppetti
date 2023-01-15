@@ -20,7 +20,7 @@ li {list-style: none;margin-bottom: 1rem;}
 
 .bgc0 {
     background: rgb(255,255,255);
-    background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 80%, rgba(171,171,171,1) 100%); 
+    background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%); 
 }
 .bgc1 {background-color:#e4e4e4} 
 .bgc2 {background-color: #474646;}
@@ -207,12 +207,20 @@ li {list-style: none;margin-bottom: 1rem;}
     gap: 1rem;
     box-shadow: 0 3px 1px 0px rgba(26, 26, 26, 0.8) inset;
 }
+.footer > section { 
+    min-width: 18rem;
+    flex-basis: 24%;
+   
+    display: flex; justify-content: center;
+    flex-wrap: wrap;
+}
+
 .footer__itemscont {
     border-radius: 4px;
     padding: 1rem;
     height: 11rem;
-    width: 22rem;
-
+    width: 100%;
+    max-width: 22rem;
     gap: 1rem;justify-content: center;
     box-shadow: 0 1px 4px 0px rgba(26, 26, 26, 0.8)
 }
@@ -220,7 +228,6 @@ li {list-style: none;margin-bottom: 1rem;}
     justify-content: space-evenly; width: 85%;
 }
 
-/*separator*/
 .footer .separator {margin: 1rem 0; }
 .footer .separator div {background-color: rgb(175, 175, 175);}
 .footer .separsator * {color: rgb(255, 255, 255);}
@@ -401,7 +408,7 @@ li {list-style: none;margin-bottom: 1rem;}
 /* ===== KEYFRAMES =====  */
 @keyframes carousel {
     0% {background-image: url("../multimedia/carrusel1.jpg");}
-    33%{background-image: url("../multimedia/carrusel2.webp");}
+    33%{background-image: url("../multimedia/carrusel2.jpg");}
     66%{background-image: url("../multimedia/carrusel3.jpg");}
 }
 
@@ -432,14 +439,21 @@ li {list-style: none;margin-bottom: 1rem;}
     /* HEADER*/
     .header { grid-template-columns: 10% 1fr auto auto;}
 
+
     /* NAV */
     .nav {justify-content: center;}
     .navbtn {width: 100%; text-align: center; margin-bottom: 0.5rem;}
     .nav__navitems {display: block;}
     .nav__navitems__mobile {display: none;}
 
+
     /* FOOTER*/
     .footer { flex-wrap: wrap-reverse;}
+    .footer > section { 
+        flex-basis: 48%;
+        display: flex; justify-content: center;
+        flex-wrap: wrap;
+    }
 
 
     /* MAIN INDEX */
@@ -502,8 +516,7 @@ li {list-style: none;margin-bottom: 1rem;}
     .nav__navitems__mobile { display: flex; justify-content: space-evenly; width: 100%;}
 
     /* FOOTER*/
-    .footer { padding: 0;}
-    
+    .footer { padding: 0 1rem;}
 
     /* MAIN INDEX*/
     .main-index__hero {
