@@ -1,0 +1,53 @@
+.main-index { 
+    grid-area: main; padding-bottom: 2rem;
+
+    &__hero {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        gap: 2rem 3rem;
+        justify-items: center;
+        filter: grayscale(30%);
+
+        & img {min-width: 100%; min-height: 100%;}
+    
+        &__carousel {
+            grid-area: span 1 / span 3; 
+            @include pos(stretch, stretch, null, true);
+    
+            animation-name: carousel;
+            animation-iteration-count: infinite;
+            animation-duration: 12s;
+            animation-timing-function:step-end;
+    
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            & a {visibility: hidden;}
+        }            
+    
+        &__items {
+            @include pos(stretch, stretch, null, true);
+        }
+    }
+
+    &__bestsellers {
+        @include pos(null,null,center);
+
+        &__itemscont {
+            position: relative;
+            @include flex-pos(row, wrap, center);
+
+            gap: 1rem 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__sale__itemscont {
+        @include pos(center);
+        gap: 1rem 1rem;
+    }
+}

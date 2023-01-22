@@ -1,0 +1,58 @@
+.main-tienda { 
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 1rem;
+
+    & .separator { grid-area: 1/2 / 2/3;}
+    
+    &__shopitems {
+        grid-area: 2/2 / 4/3;
+        gap: 1rem;
+    }
+    
+    &__sidebar { 
+        grid-area: 2/1 / 4/2;
+        background-color: rgb(233, 233, 237);
+        border: 1px solid rgb(141, 141, 141);
+        border-radius: 2px;
+        position: sticky; top: 0;
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 3rem;
+
+            & > i {padding-left: 1rem;}
+        }
+        
+        &__filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 0;
+            padding: 1rem 0;
+            background-color: rgb(233, 233, 237);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 200ms;
+            height: 100%;
+
+            &.hide { padding: 0rem; min-height: 0; height: 0px;}
+            
+            & > input {
+                margin-left: 1rem;
+                cursor: pointer;
+            }
+
+            & > label { 
+                flex-basis: 75%;
+                align-self: center;
+                padding: 0 .5rem;
+                cursor: pointer;
+            }
+        }
+    }
+    &__stickycontainer {position: sticky; top: 0; height: 400px;} 
+}

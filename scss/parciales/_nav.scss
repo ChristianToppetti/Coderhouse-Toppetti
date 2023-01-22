@@ -1,0 +1,14 @@
+.nav {
+    grid-area: nav;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &__navitems {
+        display: block;
+        & > * {padding: 1rem; color: rgb(233, 233, 233);}
+        &__mobile {display: none; padding: .5rem;}
+        &__mobile * {color: white;}
+    }
+}
+

@@ -1,0 +1,17 @@
+@mixin flex-pos($dir:row, $wrap:nowrap, $justify:null, $align:null) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    @include pos($justify, $align);
+}
+
+@mixin pos($justify:null, $align:null, $text:null, $self:false) {
+    @if $self {
+        justify-self: $justify; 
+        align-self: $align;
+    } @else {
+        justify-content: $justify; 
+        align-items: $align;
+    }
+    text-align: $text;
+}
