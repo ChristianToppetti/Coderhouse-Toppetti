@@ -41,4 +41,9 @@
             padding-bottom: 0.5rem;
         }
     }
+
+    @include breakpoint($medium) {
+        &__contactinfo {flex-basis: 100%; word-break: break-all;}
+        &__contactform {width: 100%;}
+    }
 }

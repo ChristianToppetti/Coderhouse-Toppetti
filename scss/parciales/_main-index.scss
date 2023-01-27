@@ -14,8 +14,8 @@
         & img {min-width: 100%; min-height: 100%;}
     
         &__carousel {
+            @include pos(stretch, stretch, 1);
             grid-area: span 1 / span 3; 
-            @include pos(stretch, stretch, null, true);
     
             animation-name: carousel;
             animation-iteration-count: infinite;
@@ -30,16 +30,16 @@
         }            
     
         &__items {
-            @include pos(stretch, stretch, null, true);
+            @include pos(stretch, stretch, 1);
         }
     }
 
     &__bestsellers {
-        @include pos(null,null,center);
+        text-align: center;
 
         &__itemscont {
+            @include flexrow(h, 1);
             position: relative;
-            @include flex-pos(row, wrap, center);
 
             gap: 1rem 1rem;
             margin-bottom: 2rem;
@@ -47,7 +47,19 @@
     }
 
     &__sale__itemscont {
-        @include pos(center);
+        @include flexrow(h, 1);
         gap: 1rem 1rem;
+    }
+
+    @include breakpoint($large) {
+        &__hero { gap: 0.5rem 0.5rem;}
+        &__bestsellers__itemscont {gap: 0.5rem 0.5rem;}
+        &__sale__itemscont {gap: 0.5rem 0.5rem;}
+    }
+    @include breakpoint($medium) {
+        &__hero {
+            @include flexcol();
+            & > a { margin-top: 2rem; }
+        }
     }
 }

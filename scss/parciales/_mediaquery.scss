@@ -1,4 +1,4 @@
-@media only screen and (max-width:1280px)
+@media only screen and (max-width:$large)
 {
     .text {padding: 5px 0;}
     .grid {grid-template-columns: 0.5rem 7fr 0.5rem;}
@@ -24,18 +24,6 @@
 
     /* HEADER*/
     .header { grid-template-columns: 10% 1fr auto auto;}
-
-
-    /* NAV */
-    .nav {
-        justify-content: center;
-
-        &__navitems {
-            display: block;
-            &__mobile {display: none;}
-        }
-    }
-
 
     /* FOOTER*/
     .footer { 
@@ -89,7 +77,7 @@
     }
 }
 
-@media only screen and (max-width:670px)
+@media only screen and (max-width:$medium)
 {
     /* SEP */
     .separator {font-size: 1.5rem;}
@@ -102,20 +90,6 @@
         grid-template-columns: 1% 1fr auto auto;
         &__cart {display: none;}  
     }  
-
-    /* NAV */
-    .nav {
-        flex-wrap: wrap;
-        &__navitems {
-            display: flex; flex-wrap: wrap;
-            visibility: visible;
-            justify-content: center;
-            align-items: center;
-            display: none;
-
-            &__mobile { display: flex; justify-content: space-evenly; width: 100%;}
-        }
-    }
 
     /* FOOTER*/
     .footer {
@@ -136,7 +110,7 @@
     }
 }
 
-@media only screen and (max-width:360px)
+@media only screen and (max-width:$small)
 {
     .separator {font-size: 1rem;}
 

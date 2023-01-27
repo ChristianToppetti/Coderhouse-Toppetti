@@ -13,14 +13,12 @@ li {list-style: none;margin-bottom: 1rem;}
     background: rgb(255,255,255);
     background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%); 
 }
-.bgc1 {background-color:#e4e4e4} 
-.bgc2 {background-color: #474646;}
+.bgc1 {background-color:#e21313} 
+.bgc2 {background-color: #00f821;}
 .bordernone {border: none;}
 
 .textbtn {
     display: inline-block;
-    color: black;
-    text-align: center;
 }
 .textbtn--selected { font-weight: bold;}
 .textwhite {color: white;}
@@ -31,9 +29,9 @@ li {list-style: none;margin-bottom: 1rem;}
 
 .buttons {
     background-clip: padding-box;
-    background-color: rgb(61, 61, 61);
+    background-color: getmap($colors, "buttons", "background");
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    color: #fff;
+    color: getmap($colors, "buttons", "text");
     font-size: 1rem;
     font-weight: bold;
     min-height: 3rem;
@@ -44,44 +42,27 @@ li {list-style: none;margin-bottom: 1rem;}
     white-space: break-spaces;
     transition: background-color 300ms;
 
-    &:hover {background-color: rgb(100, 100, 100);}
+    &:hover {background-color: getmap($colors, "buttons", "hover");}
 }
 
 .shadow {
     box-shadow: 0 3px 1px 0px rgb(26, 26, 26);
 }
 
-/*.separator {
-    @include flex-pos(row, null, space-evenly, center);
-    margin: 2rem 0;
-    flex-basis: 100%;
-
-    &__line {
-        flex-basis: 100%;
-        height: 2px;
-        min-height: 0;
-        background-color: #44444434;
-    }
-
-    &__title {
-        flex-shrink: 0;
-        padding: 0 1rem;
-        color: #444444;
-    }
-}*/
 .separator {
-    @include flex-pos(row, null, space-evenly, center);
+    @include flexrow(v);
+    justify-content: space-evenly;
     margin: 2rem 0;
     flex-basis: 100%;
     flex-shrink: 0;
-    color: #444444;
+    color: getmap($colors, "separator", "text");
     white-space: nowrap;
 
     &::before {
         flex-basis: 100%;
         height: 2px;
         min-height: 0;
-        background-color: #44444434;
+        background-color: getmap($colors, "separator", "line");
         margin-right: 1rem;
         content: '';
     }
@@ -94,17 +75,18 @@ li {list-style: none;margin-bottom: 1rem;}
 }
 
 .shopitem {
-    @include flex-pos(column, null, end, center);
-    position: relative;
+    @include flexcol(h);
+    justify-content: end;
+       position: relative;
     min-width: calc((100% / 5) - (4rem / 5)); /*maximo 5 shopitems por fila */
     max-width: calc((100% / 4) - (3rem / 4)); /*minimo 4 shopitems por fila */
     
     &::before { /* ITEM NAME*/
-        @include flex-pos(row, null, center, center);
+        @include flexrow(b);
         position: absolute;
         top: 0;
-        background-color:rgba(4, 169, 109, 0.9);
-        color: white;
+        background-color:getmap($colors, "shopitems", "background");
+        color: getmap($colors, "shopitems", "text");
         font-size: 1px;
         content: '';
     
@@ -122,10 +104,10 @@ li {list-style: none;margin-bottom: 1rem;}
     }
     
     &::after { /* PRICE TAG */
-        @include flex-pos(row, null, center, center);
+        @include flexrow(b);
         position: absolute;
-        background-color:rgba(4, 169, 109, 0.9);
-        color: white;
+        background-color:getmap($colors, "shopitems", "background");
+        color: getmap($colors, "shopitems", "text");
         content: '';
         border-radius: 4px;
     
@@ -141,19 +123,12 @@ li {list-style: none;margin-bottom: 1rem;}
 }
 
 .grid {
+    background-color: white; /*fallback*/
+    background-color: getmap($colors, "grid", "background");
     display: grid;
     grid-template-areas:"header header header"
                         "nav nav nav"
                         ". main ."
-                        "footer footer footer";
-    grid-template-columns: 15% 1fr 15%;
-}
-
-.gridshop {
-    display: grid;
-    grid-template-areas:".. header header"
-                        "nav nav nav"
-                        "main main .."
                         "footer footer footer";
     grid-template-columns: 15% 1fr 15%;
 }

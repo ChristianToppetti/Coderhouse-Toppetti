@@ -1,14 +1,40 @@
 .nav {
+    @include flexrow();
     grid-area: nav;
     justify-content: end;
-    align-items: center;
     margin-bottom: 2rem;
+    background-color: getmap($colors, "nav", "background");
 
     &__navitems {
         display: block;
-        & > * {padding: 1rem; color: rgb(233, 233, 233);}
-        &__mobile {display: none; padding: .5rem;}
-        &__mobile * {color: white;}
+        & > * {padding: 1rem; color:getmap($colors, "nav", "text");}
+        &__mobile {
+            @include flexrow(0, 1);
+            display: none; padding: .5rem;
+        }
+        &__mobile * {color: getmap($colors, "nav", "text");}
+    }
+
+    @include breakpoint($large) {
+        justify-content: center;
+
+        &__navitems {
+            display: block;
+            &__mobile {display: none;}
+        }
+    } 
+    @include breakpoint($medium) {
+        flex-wrap: wrap;
+        &__navitems {
+            @include flexrow(b, 1);
+            visibility: visible;
+            display: none;
+            &__mobile { 
+                display: flex; justify-content: space-evenly; 
+                text-align: center; 
+                width: 100%;
+            }
+        }
     }
 }
 

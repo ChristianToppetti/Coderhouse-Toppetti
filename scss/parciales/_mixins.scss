@@ -1,11 +1,36 @@
-@mixin flex-pos($dir:row, $wrap:nowrap, $justify:null, $align:null) {
-    display: flex;
-    flex-direction: $dir;
-    flex-wrap: $wrap;
-    @include pos($justify, $align);
+@mixin flexcol($center:false, $wrap:false)
+{
+    display: flex; flex-direction: column;
+    @if $center == h{   /*Horizontal*/
+        align-items: center;
+    } @else if $center == v { /*Vertical*/
+        justify-content: center;
+    }
+    @else if $center == b { /* Ambos (Both)*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if $wrap {flex-wrap: wrap;}
 }
 
-@mixin pos($justify:null, $align:null, $text:null, $self:false) {
+@mixin flexrow($center:false, $wrap:false)
+{
+    display: flex; flex-direction: row;
+    @if $center == h{
+        justify-content: center;
+    } @else if $center == v { 
+        align-items: center;
+    }
+    @else if $center == b {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if $wrap {flex-wrap: wrap;}
+}
+
+@mixin pos($justify:null, $align:null, $self:false, $text:null) {
     @if $self {
         justify-self: $justify; 
         align-self: $align;
@@ -13,5 +38,49 @@
         justify-content: $justify; 
         align-items: $align;
     }
-    text-align: $text;
+    
+    @if $text {text-align: $text;}
+}
+
+@mixin breakpoint($breakpoint:breakpoint)
+{
+    @if $breakpoint==$large {
+        @media only screen and (max-width: $large) {
+            @content;
+        }
+    } @else if $breakpoint==$medium {
+        @media only screen and (max-width: $medium) {
+            @content;
+        }
+    } @else if $breakpoint==$small {
+        @media only screen and (max-width: $small) {
+            @content;
+        }
+    }
+}
+
+@function getmap($map, $keys...){
+    $error:null;
+    @each $key in $keys /* Vemos keys*/
+    { 
+        $error: $key;
+        $ismap: map-get($map, $key); /*Ponemos el valor asignado a $key en ismap*/
+
+        @if ismap($ismap) { /*Si $ismap es un mapa (por ende $key era un mapa dentro de un mapa)*/
+            $map: $ismap; /*Ponemos el mapa en $map y que siga el @each*/
+        } 
+        @else if map-has-key($map, $key) {/*Si no hay un mapa dentro de $ismap y la key existe (por ende hay un valor) lo returneamos*/
+            @return $ismap;
+            @debug "return: #{$ismap}";
+        }
+        @else { /*La key no existe = no hay valor que returnear*/
+            @error "getmap: La key '#{$key}' no existe.";
+        }
+    }
+    /*Si termina el @each sin returnear: */
+    @error "getmap: La key '#{$error}' es un mapa";
+}
+
+@function ismap($var) {
+    @return type-of($var) == 'map';
 }
