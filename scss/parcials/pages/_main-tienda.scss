@@ -1,4 +1,5 @@
 .main-tienda { 
+    @include flexrow(0, 1);
     grid-area: main;
     display: grid;
     grid-template-columns: 15% 1fr;
@@ -8,11 +9,13 @@
     & .separator { grid-area: 1/2 / 2/3;}
     
     &__shopitems {
+        @include flexrow(0, 1);
         grid-area: 2/2 / 4/3;
         gap: 1rem;
     }
     
     &__sidebar { 
+        @include flexcol();
         grid-area: 2/1 / 4/2;
         background-color: rgb(233, 233, 237);
         border: 1px solid rgb(141, 141, 141);
@@ -51,7 +54,7 @@
             }
         }
     }
-    &__stickycontainer {position: sticky; top: 0; height: 400px;} 
+    &__stickycontainer {@include flexcol(); position: sticky; top: 0; height: 400px;} 
 
     @include breakpoint($large) {
         & .separator {

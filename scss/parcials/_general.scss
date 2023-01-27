@@ -3,29 +3,14 @@ h2 {font-size: 2rem;}
 h3 {font-size: 1.5rem;}
 h4 {font-size: 1.3rem;}
 
-a {text-decoration: none; color: black;}
+a {text-decoration: none;}
 
 img {max-width: 100%; max-height: 100%;}
 
 li {list-style: none;margin-bottom: 1rem;}
 
-.bgc0 {
-    background: rgb(255,255,255);
-    background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%); 
-}
-.bgc1 {background-color:#e21313} 
-.bgc2 {background-color: #00f821;}
-.bordernone {border: none;}
-
-.textbtn {
-    display: inline-block;
-}
+.textbtn { display: inline-block;}
 .textbtn--selected { font-weight: bold;}
-.textwhite {color: white;}
-
-.flex {display: flex}
-.flexcol {display:flex; flex-direction: column;}
-.flexwrap {flex-wrap: wrap;}
 
 .buttons {
     background-clip: padding-box;
@@ -43,6 +28,9 @@ li {list-style: none;margin-bottom: 1rem;}
     transition: background-color 300ms;
 
     &:hover {background-color: getmap($colors, "buttons", "hover");}
+
+    @include breakpoint($large) {padding: 0.5rem 1rem;}
+    @include breakpoint($small) {overflow: hidden; text-overflow: ellipsis;}
 }
 
 .shadow {
@@ -72,6 +60,9 @@ li {list-style: none;margin-bottom: 1rem;}
         margin-left: 1rem;
         margin-right: 0;
     }
+
+    @include breakpoint($medium) {font-size: 1.5rem;}
+    @include breakpoint($small) {font-size: 1rem;}
 }
 
 .shopitem {
@@ -120,15 +111,42 @@ li {list-style: none;margin-bottom: 1rem;}
         width: 35%; height: 10%;margin-bottom: 1rem;
         content: '$$$$';
     }
+    @include breakpoint($large) {
+        max-width: calc((100% / 3) - (1rem / 3)); /*minimo 3 shopitems por fila */
+       
+        &.active::before { 
+            height: 15% !important;
+            content: 'ITEM NAME'; 
+            font-size: 1rem;
+            font-weight: bold;
+            filter: grayscale(0%); opacity: 0.8;
+        }
+        &.active::after {
+            width: 35%; height: 10%;margin-bottom: 1rem;
+            content: '$$$$';
+        }
+    }
+    @include breakpoint($medium) {max-width: calc((100% / 2) - (0.5rem / 2));} /*minimo 2 shopitems por fila */
 }
 
+.card {
+    background-color: getmap($colors, "card", "background");
+    color: getmap($colors, "card", "text");
+    border: solid 1px;
+    border-radius: .5rem;
+    padding: 1rem;
+
+    * {color: getmap($colors, "card", "text");}
+}
 .grid {
     background-color: white; /*fallback*/
-    background-color: getmap($colors, "grid", "background");
+    background: getmap($colors, "grid", "background");
     display: grid;
     grid-template-areas:"header header header"
                         "nav nav nav"
                         ". main ."
                         "footer footer footer";
     grid-template-columns: 15% 1fr 15%;
+
+    @include breakpoint($large) {grid-template-columns: 0.5rem 7fr 0.5rem;}
 }

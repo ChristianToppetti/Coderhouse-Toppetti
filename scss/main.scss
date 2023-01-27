@@ -1,15 +1,14 @@
-@import "./parciales/mixins";
-@import "./parciales/varsmaps";
-@import "./parciales/reset";
-@import "./parciales/general";
-@import "./parciales/header";
-@import "./parciales/nav";
-@import "./parciales/footer";
+@import "./parcials/algorithms";
+@import "./parcials/varsmaps";
+@import "./parcials/reset";
+@import "./parcials/general";
+@import "./parcials/header";
+@import "./parcials/nav";
+@import "./parcials/footer";
 
-@import "./parciales/main-index";
-@import "./parciales/main-contacto";
-@import "./parciales/main-devolucion";
-@import "./parciales/main-tienda";
+@import "./parcials/pages/main-index";
+@import "./parcials/pages/main-contacto";
+@import "./parcials/pages/main-devolucion";
+@import "./parcials/pages/main-tienda";
 
-@import "./parciales/keyframes";
-@import "./parciales/mediaquery";
+@import "./parcials/keyframes";

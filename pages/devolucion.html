@@ -1,22 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Devoluciones</title>
+        <meta name="description" content="Indra es tu tienda de ropa de mujer, con una amplia selección de calzados, vestidos y remeras. Compra en línea hoy mismo.">
+        <meta name="keywords" content="ROPA DE MUJER, MODA FEMENINA, VESTIDOS, REMERAS, CALZADOS, TIENDA EN LINEA, ROPA EN LINEA, ENVIO">
+        <title>Productos</title>
 
-        <link rel="shortcut icon" href="../img/favicon.png">
+        <link rel="shortcut icon" href="../multimedia/favicon.png">
         <link rel="stylesheet" href="../css/compilado.css">
-        
+
         <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="../js/scrollhover.js"></script>
     </head>
 
     <body>
-        <div class="grid bgc1">
-            <header class="header bgc1">
-                <a class="header__logo" href="#">
+        <div class="grid">
+            <header class="header">
+                <a class="header__logo" href="../index.html">
                     <h1>INDRA</h1>
                 </a>
 
@@ -31,20 +35,20 @@
                 </a> 
             </header>
 
-            <nav class="nav flex bgc2 shadow">
+            <nav class="nav shadow">
                 <div class="nav__navitems">
                     <a class="textbtn" href="../index.html">INICIO</a>
                     <a class="textbtn" href="tienda.html">PRODUCTOS</a>
                     <a class="textbtn" href="contacto.html">CONTACTO</a>
                     <a class="textbtn textbtn--selected" href="#">POLITICA DE DEVOLUCION</a>
                 </div>
-                <div class="nav__navitems__mobile flex flexwrap">   <!-- NAV para mobile -->
+                <div class="nav__navitems__mobile">   <!-- NAV para mobile -->
                     <a class="textbtn" href="../index.html">
                         <i class="material-icons">home</i>
                         <p>INICIO</p>  
                     </a>
 
-                    <a class="textbtn textbtn--selected" href="#">
+                    <a class="textbtn" href="tienda.html">
                         <i class="material-icons">apps</i>
                         <p>PRODUCTOS</p>    
                     </a>
@@ -56,7 +60,7 @@
                 </div>
             </nav>
 
-            <main class="main-devolucion">
+            <main class="main-devolucion card">
                 <h2 class="separator">POLITICA DE DEVOLUCION</h2>
                 
                 <h3>MOTIVOS DE DEVOLUCIÓN</h3>
@@ -97,7 +101,7 @@
                 </ul>
             </main> 
 
-            <footer class="footer bgc1 flex flexwrap">
+            <footer class="footer">
                 <section>  <!-- NAV -->
                     <h4 class="separator">NAVEGACION</h4>
 
@@ -138,15 +142,15 @@
                     <ul class="footer__itemscont">
                         <li><i class="material-icons">phone</i>+54 9 11 XXXX-XXXX</li>
                         <li><i class="material-icons">email</i>consulta@indraropa.com</li>
-                        <li><img src="../multimedia/icons/instagram.png" alt="INS" width="21rem"><a href="#">@indraropa</a></li>
-                        <li><img src="../multimedia/icons/facebook.png" alt="FACE" width="21rem"><a href="#">indraropa</a></li>
+                        <li><img src="../multimedia/icons/instagram.png" alt="INS"><a href="http://instagram.com" target="_blank" rel="noopener noreferrer">@indraropa</a></li>
+                        <li><img src="../multimedia/icons/facebook.png" alt="FACE"><a href="http://facebook.com" target="_blank" rel="noopener noreferrer">indraropa</a></li>
                     </ul>
                 </section>
 
                 <section> <!-- METODOS DE PAGO  -->
                     <h4 class="separator">METODOS DE PAGO</h4>
 
-                    <div class="footer__itemscont flex flexwrap">
+                    <div class="footer__itemscont">
                         <img src="../multimedia/icons/visa.png" alt="visa">
                         <img src="../multimedia/icons/mastercard.png" alt="mastercard">
                         <img src="../multimedia/icons/tarjetanaranja.png" alt="tarjeta-naranja">
@@ -160,8 +164,8 @@
                 <section> <!-- NEWSLETTER -->
                     <h4 class="separator">NEWSLETTER</h4>
 
-                    <form class="footer__itemscont flex" action="#" method="GET" enctype="text/plain">
-                        <fieldset class="footer_newsletter flexcol bordernone">
+                    <form class="footer__itemscont" action="#" method="GET" enctype="text/plain">
+                        <fieldset class="footer_newsletter">
                             <legend>Suscribite a nuestro Newsettler</legend>
                             <input placeholder="Nombre" type="text" name="name" id="name" required>
                             <input placeholder="Correo Electronico" type="email" name="email" id="email" required>
@@ -169,7 +173,7 @@
                         </fieldset>
                     </form>  
                 </section>
-            </footer>    
+            </footer>     
         </div>
     </body>
 </html>

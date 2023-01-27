@@ -1,23 +1,33 @@
 .main-contacto {
+    @include flexrow(0, 1);
     grid-area: main;
     margin-top: 2rem;
 
     &__contactinfo {
+        @include flexrow(h); align-items: flex-start;
         padding: 1rem;
         flex-basis: 50%;
-        align-items: center;
         gap: 1rem;
 
         & li {
-            display: flex; align-items: center;
+            @include flexrow(v);
             margin-bottom: 2rem;
             gap: .5rem;
+            
+            img {
+                 width: 21px;
+            }
         }
     }
     
     &__contactform {
         padding: 1rem;
         width: 50%;
+
+        fieldset {
+            @include flexcol();
+            border: none;
+        }
 
         &__input {
             margin-bottom: 2rem;
