@@ -39,9 +39,6 @@ main {
     @include breakpoint($small) {overflow: hidden; text-overflow: ellipsis;}
 }
 
-.shadow {
-    box-shadow: 0 3px 1px 0px rgb(26, 26, 26);
-}
 
 .separator {
     @include flexrow(v);
@@ -157,4 +154,8 @@ main {
     grid-template-columns: 15% 1fr 15%;
 
     @include breakpoint($large) {grid-template-columns: 0.5rem 7fr 0.5rem;}
+}
+
+.shadow {
+    box-shadow: 0 3px 1px 0px rgb(26, 26, 26);
 }
