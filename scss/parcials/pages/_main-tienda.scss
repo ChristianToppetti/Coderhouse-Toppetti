@@ -82,6 +82,9 @@
                 height: 0%;
                 align-items: center;
                 height: 100%;
+
+                padding: 0rem; min-height: 0; height: 0px;
+                &.hide { padding: 1rem 0; min-height: 0; height: 100%;}
             }
         }
         &__stickycontainer {position: absolute; width: 100%; height: 200px;}

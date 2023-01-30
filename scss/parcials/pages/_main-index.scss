@@ -1,5 +1,5 @@
 .main-index { 
-    grid-area: main; padding-bottom: 2rem;
+    grid-area: main;
 
     &__hero {
         display: grid;
@@ -14,7 +14,7 @@
         & img {min-width: 100%; min-height: 100%;}
     
         &__carousel {
-            @include pos(stretch, stretch, 1);
+            justify-self: stretch; align-self: stretch;
             grid-area: span 1 / span 3; 
     
             animation-name: carousel;
@@ -29,9 +29,7 @@
             & a {visibility: hidden;}
         }            
     
-        &__items {
-            @include pos(stretch, stretch, 1);
-        }
+        &__items {justify-self: stretch; align-self: stretch;}
     }
 
     &__bestsellers {

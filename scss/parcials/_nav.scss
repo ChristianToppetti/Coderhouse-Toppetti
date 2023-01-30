@@ -2,8 +2,10 @@
     @include flexrow();
     grid-area: nav;
     justify-content: end;
-    margin-bottom: 2rem;
+
     background-color: getmap($colors, "nav", "background");
+    padding:getmap($layout-boxprops, "nav", "padding");
+    margin:getmap($layout-boxprops, "nav", "margin");
 
     &__navitems {
         display: block;

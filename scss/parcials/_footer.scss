@@ -1,13 +1,14 @@
 .footer {
     @include flexrow(h, 1);
     grid-area: footer;
-    margin-top: 2rem;
-    padding: 1rem 2rem 2rem 2rem;
     gap: 1rem;
     box-shadow: 0 3px 1px 0px rgba(26, 26, 26, 0.8) inset;
-    background-color: getmap($colors, "footer", "background");
 
+    background-color: getmap($colors, "footer", "background");
     color: getmap($colors, "footer", "text");
+    padding:getmap($layout-boxprops, "footer", "padding");
+    margin:getmap($layout-boxprops, "footer", "margin");
+
     & a { color: getmap($colors, "footer", "text");}
     
     & > section { 

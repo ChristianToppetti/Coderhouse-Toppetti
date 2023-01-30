@@ -3,7 +3,10 @@
     display: grid;
     grid-template-columns: 15% 1fr auto auto;
     max-height: 5rem;
-    background-color: getmap($colors, "header", "background");
+    
+    background-color:getmap($colors, "header", "background");
+    padding:getmap($layout-boxprops, "header", "padding");
+    margin:getmap($layout-boxprops, "header", "margin");
 
     &__logo {
         display: inline-block;

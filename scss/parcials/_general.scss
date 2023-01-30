@@ -1,4 +1,4 @@
-h1 {font-size: 4rem; font-family: 'Comforter';padding-bottom: 1rem;} /*LOGO*/
+h1 {font-size: 4rem; font-family: $logo-font;padding-bottom: 1rem;} /*LOGO*/
 h2 {font-size: 2rem;}
 h3 {font-size: 1.5rem;}
 h4 {font-size: 1.3rem;}
@@ -9,27 +9,33 @@ img {max-width: 100%; max-height: 100%;}
 
 li {list-style: none;margin-bottom: 1rem;}
 
+main {
+    padding:getmap($layout-boxprops, "main", "padding");
+    margin:getmap($layout-boxprops, "main", "margin");
+}
+
 .textbtn { display: inline-block;}
 .textbtn--selected { font-weight: bold;}
 
 .buttons {
-    background-clip: padding-box;
     background-color: getmap($colors, "buttons", "background");
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     color: getmap($colors, "buttons", "text");
+    padding: getmap($layout-boxprops, "buttons", "padding");
+    margin: getmap($layout-boxprops, "buttons", "margin");
+
     font-size: 1rem;
     font-weight: bold;
+
+    background-clip: padding-box;
     min-height: 3rem;
-    padding: 0.8rem 1.5rem;
-    cursor: pointer;
     border: 1px solid transparent;
     border-radius: .25rem;
     white-space: break-spaces;
     transition: background-color 300ms;
+    cursor: pointer;
 
     &:hover {background-color: getmap($colors, "buttons", "hover");}
 
-    @include breakpoint($large) {padding: 0.5rem 1rem;}
     @include breakpoint($small) {overflow: hidden; text-overflow: ellipsis;}
 }
 
@@ -39,11 +45,13 @@ li {list-style: none;margin-bottom: 1rem;}
 
 .separator {
     @include flexrow(v);
+    color: getmap($colors, "separator", "text");
+    margin: getmap($layout-boxprops, "separator", "margin");
+    padding: getmap($layout-boxprops, "separator", "padding");
+
     justify-content: space-evenly;
-    margin: 2rem 0;
     flex-basis: 100%;
     flex-shrink: 0;
-    color: getmap($colors, "separator", "text");
     white-space: nowrap;
 
     &::before {
@@ -68,7 +76,7 @@ li {list-style: none;margin-bottom: 1rem;}
 .shopitem {
     @include flexcol(h);
     justify-content: end;
-       position: relative;
+    position: relative;
     min-width: calc((100% / 5) - (4rem / 5)); /*maximo 5 shopitems por fila */
     max-width: calc((100% / 4) - (3rem / 4)); /*minimo 4 shopitems por fila */
     

@@ -1,7 +1,6 @@
 .main-contacto {
     @include flexrow(0, 1);
     grid-area: main;
-    margin-top: 2rem;
 
     &__contactinfo {
         @include flexrow(h); align-items: flex-start;

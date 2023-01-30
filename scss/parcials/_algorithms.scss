@@ -30,18 +30,6 @@
     @if $wrap {flex-wrap: wrap;}
 }
 
-@mixin pos($justify:null, $align:null, $self:false, $text:null) {
-    @if $self {
-        justify-self: $justify; 
-        align-self: $align;
-    } @else {
-        justify-content: $justify; 
-        align-items: $align;
-    }
-    
-    @if $text {text-align: $text;}
-}
-
 @mixin breakpoint($breakpoint:breakpoint)
 {
     @if $breakpoint==$large {
