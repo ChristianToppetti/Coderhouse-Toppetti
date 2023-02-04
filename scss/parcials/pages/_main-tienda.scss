@@ -2,9 +2,8 @@
     @include flexrow(0, 1);
     grid-area: main;
     display: grid;
-    grid-template-columns: 15% 1fr;
+    grid-template-columns: 18% 1fr;
     grid-template-rows: auto auto 1fr;
-    grid-gap: 1rem;
 
     & .separator { grid-area: 1/2 / 2/3;}
     

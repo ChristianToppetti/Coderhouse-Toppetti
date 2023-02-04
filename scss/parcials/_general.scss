@@ -47,7 +47,7 @@ main {
     padding: getmap($layout-boxprops, "separator", "padding");
 
     justify-content: space-evenly;
-    flex-basis: 100%;
+    width: 100%;
     flex-shrink: 0;
     white-space: nowrap;
 

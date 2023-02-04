@@ -1,0 +1,117 @@
+.main-item {
+    @include flexrow(h);
+    grid-area: main;
+    gap: 2rem;
+
+    &__gallery {
+        @include flexrow(h);
+        
+        &__thumbnails {
+            @include flexcol(h);
+            width: 5rem;
+            gap: .5rem;
+            margin-right: .2rem;
+
+            & > img:hover {
+                filter: brightness(50%);
+                cursor: pointer;
+            }
+        }
+        &__itemimg {
+            & > img {border: 1px solid}
+        }
+    }
+
+    &__info {
+        @include flexcol();
+        flex-basis: 40%;
+        gap: 2rem;
+
+        &__payment {
+            @include flexcol();
+            gap: 1rem;
+
+            & > span {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 2.5rem;
+                color: rgb(1, 102, 1);
+            }
+
+            & > div {
+                @include flexrow(v);                
+                & .material-icons {
+                    font-size: 2rem;
+                    margin-right: .5rem;
+                }
+            }
+        }
+
+        &__colors {
+            @include flexrow(0, 1);
+            gap: 1rem;
+            & > span {
+                flex-basis: 100%;
+            }
+            & > div {
+                @include flexrow(b);
+                width: $itemshop-colorbtn-size; height: $itemshop-colorbtn-size;
+                border-radius: 50%;
+                border: 2px solid rgb(141, 141, 141);
+                cursor: pointer;
+                overflow: hidden;
+
+                &.selected {
+                    cursor: default;
+                    border: 2px solid black;
+                }
+
+                & > div {
+                    width: 100%; height: 100%;
+                    border: 1px solid transparent;
+                    background-clip: content-box;
+                    border-radius: 50%;
+                }
+
+                & .colors-black {background-color: black;}
+                & .colors-white {background-color: white;}
+                & .colors-red {background-color: red;}
+                & .colors-yellow {background-color: yellow;}
+                & .colors-blue {background-color: blue;}
+            }
+
+            & > div:hover {
+                border-color: rgb(1, 197, 247);
+            } 
+        }
+
+        &__sizes {
+            @include flexrow(0, 1);
+            gap: 1rem;
+            
+            & > span {
+                flex-basis: 100%;
+            }   
+            & > div {
+                border: 2px solid rgb(167, 167, 167);
+                border-radius: 20%;
+                padding: .5rem;
+                cursor: pointer;
+                
+                &.selected {
+                    cursor: default;
+                    border: 2px solid black;
+                }
+            }
+
+            & > div:hover {
+                border-color: rgb(1, 197, 247);
+            } 
+        }
+
+        & .separator {
+            margin: 0;
+            &::before {margin: 0;}
+            &::after {margin: 0;}
+        }
+    }
+}

@@ -1,5 +1,6 @@
 $default-font: Arial, Helvetica, sans-serif;
 $logo-font: 'Comforter';
+$itemshop-colorbtn-size: 2rem;
 
 /*Responsive*/
 $large: 1280px !global;
@@ -67,6 +68,6 @@ $colors: (
         background:#ececec
     ),
     grid:(
-        background:linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(204,204,204,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%)
+        background:linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(224,224,224,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%)
     )
 );
