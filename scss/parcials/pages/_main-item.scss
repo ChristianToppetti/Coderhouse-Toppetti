@@ -16,10 +16,17 @@
                 filter: brightness(50%);
                 cursor: pointer;
             }
+
+            @include breakpoint($small) {
+                @include flexrow(b);
+                width: 100%; margin: 0 0 .5rem;
+            }
         }
         &__itemimg {
             & > img {border: 1px solid}
         }
+
+        @include breakpoint($small){ @include flexcol(h);}
     }
 
     &__info {
@@ -113,5 +120,9 @@
             &::before {margin: 0;}
             &::after {margin: 0;}
         }
+
+        @include breakpoint($large) {flex-basis: auto;}
     }
+
+    @include breakpoint($large) { @include flexcol(h);}
 }

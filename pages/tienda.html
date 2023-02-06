@@ -62,26 +62,40 @@
 
             <main class="main-tienda">
                 <section class="main-tienda__sidebar">
-                    <div class="main-tienda__stickycontainer">
-                        <button class="main-tienda__sidebar__btn buttons" onclick="showFilters()"><p>Filtros</p><i class="material-icons">keyboard_arrow_down</i></button> 
-                        <div id="sidebarMenu" class="main-tienda__sidebar__filters">
-                            <input type="checkbox" id="remeras" name="remeras" value="rem">
-                            <label for="remeras">Remeras</label>
+                    <div class="main-tienda__sidebar__stickcont">
+                        <button class="main-tienda__sidebar__stickcont__btn buttons" onclick="showFilters()"><p>Filtros</p><i class="material-icons">keyboard_arrow_down</i></button> 
+                        <div id="sidebarMenu" class="main-tienda__sidebar__stickcont__filters">
+                            <ul>
+                                <p>PRENDA</p>
+                                <li>
+                                    <input type="checkbox" id="remeras" name="remeras" value="rem">
+                                    <label for="remeras">Remeras</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="vestidos" name="vestidos" value="vest">
+                                    <label for="vestidos">Vestidos</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="calzado" name="calzado" value="cal">
+                                    <label for="calzado">Calzado</label>
+                                </li>
+                            </ul>
 
-                            <input type="checkbox" id="vestidos" name="vestidos" value="vest">
-                            <label for="vestidos">Vestidos</label>
-
-                            <input type="checkbox" id="calzado" name="calzado" value="cal">
-                            <label for="calzado">Calzado</label>
-
-                            <input type="checkbox" id="lorem1" name="lorem1" value="rem1">
-                            <label for="lorem1">Loremipsum</label>
-
-                            <input type="checkbox" id="lorem2" name="lorem2" value="rem2">
-                            <label for="lorem2">Dolorsit</label>
-
-                            <input type="checkbox" id="lorem3" name="lorem3" value="rem3">
-                            <label for="lorem3">Ametconsecte</label>
+                            <ul>
+                                <p>TALLE</p>
+                                <li>
+                                    <input type="checkbox" id="lorem1" name="lorem1" value="rem1">
+                                    <label for="lorem1">Loremipsum</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="lorem2" name="lorem2" value="rem2">
+                                    <label for="lorem2">Dolorsit</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="lorem3" name="lorem3" value="rem3">
+                                    <label for="lorem3">Ametconsecte</label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>

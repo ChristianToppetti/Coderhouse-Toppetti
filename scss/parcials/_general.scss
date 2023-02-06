@@ -88,6 +88,7 @@ main {
         background-color:getmap($colors, "shopitems", "background");
         color: getmap($colors, "shopitems", "text");
 
+        text-align: center;
         font-family: $itemshop-font;
         transition: transform 300ms;
 
@@ -101,8 +102,6 @@ main {
             background-color:getmap($colors, "shopitems", "background");
             content: '';
         }
-
-        @include breakpoint($small) {text-align: center;}
     }
     
     &__img {
@@ -191,6 +190,7 @@ main {
                         "footer footer footer";
     grid-template-columns: 15% 1fr 15%;
 
+    @include breakpoint($xlarge) {grid-template-columns: 7% 1fr 7%;}
     @include breakpoint($large) {grid-template-columns: 0.5rem 7fr 0.5rem;}
 }
 

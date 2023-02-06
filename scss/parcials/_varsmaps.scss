@@ -4,6 +4,7 @@ $itemshop-colorbtn-size: 2rem;
 $itemshop-font: Verdana, Geneva, Tahoma, sans-serif;
 
 /*Responsive*/
+$xlarge: 1440px !global;
 $large: 1024px !global;
 $medium: 768px !global;
 $small: 425px !global;
@@ -62,7 +63,11 @@ $colors: (
     ),
     shopitems:(
         text:white,
-        background:#01613e,
+        background:#01613e
+    ),
+    shopfilter:(
+        text:black,
+        background:#e9e9ed
     ),
     card:(
         text: black,
