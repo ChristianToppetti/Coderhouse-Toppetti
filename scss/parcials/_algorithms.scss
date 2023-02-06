@@ -59,7 +59,6 @@
         } 
         @else if map-has-key($map, $key) {/*Si no hay un mapa dentro de $ismap y la key existe (por ende hay un valor) lo returneamos*/
             @return $ismap;
-            @debug "return: #{$ismap}";
         }
         @else { /*La key no existe = no hay valor que returnear*/
             @error "getmap: La key '#{$key}' no existe.";

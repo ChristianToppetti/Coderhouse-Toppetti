@@ -1,11 +1,12 @@
 $default-font: Arial, Helvetica, sans-serif;
 $logo-font: 'Comforter';
 $itemshop-colorbtn-size: 2rem;
+$itemshop-font: Verdana, Geneva, Tahoma, sans-serif;
 
 /*Responsive*/
-$large: 1280px !global;
-$medium: 670px !global;
-$small: 360px !global;
+$large: 1024px !global;
+$medium: 768px !global;
+$small: 425px !global;
 
 $layout-boxprops: (
     header: (
@@ -61,13 +62,14 @@ $colors: (
     ),
     shopitems:(
         text:white,
-        background:#04a96de6
+        background:#01613e,
     ),
     card:(
         text: black,
         background:#ececec
     ),
     grid:(
-        background:linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(224,224,224,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%)
+        //background:linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(224,224,224,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%)
+        background:repeating-linear-gradient( 45deg, #dfdfdf, #eeeeee 800px)
     )
 );
