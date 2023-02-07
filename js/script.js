@@ -55,8 +55,10 @@ function carouselPrev() {
 }
 
 function carouselFix(scrollLeft, slidesContainer, imgWidth, isnext) { /* Para que no se bugee cuando se spamea el click (en esta funcion perdi como 3 horas jaja) */
+  var errMargin = 10; /* Bug fix*/
+
   if(isnext) {
-    if ((scrollLeft + imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft + imgWidth) == (slidesContainer.scrollLeft + imgWidth)) {
+    if ((scrollLeft + imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft + imgWidth) >= (slidesContainer.scrollLeft + imgWidth) - errMargin) {
       carTimeout = false;  /* Con estas 2 condiciones carTimeout se pone en false solo cuando el scroll termina de moverse*/
     }
     else {
@@ -64,7 +66,7 @@ function carouselFix(scrollLeft, slidesContainer, imgWidth, isnext) { /* Para qu
     }
   }
   else {
-    if ((scrollLeft - imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft - imgWidth) == (slidesContainer.scrollLeft - imgWidth)) {
+    if ((scrollLeft - imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft - imgWidth) <= (slidesContainer.scrollLeft - imgWidth) + errMargin) {
       carTimeout = false;
     }
     else {

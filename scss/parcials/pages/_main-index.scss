@@ -27,7 +27,7 @@
                 left: 0;
                 top: 0;
                 
-                transition: width 500ms;
+                transition: background-color 500ms;
                 background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.7) 100%);
                 box-shadow: none;
                 border: none;
@@ -45,15 +45,14 @@
 
             $h: &;
             .carouselbtn-prev:hover, .carouselbtn-next:hover {
-                #{$h} .carouselbtn-next, #{$h} .carouselbtn-prev {
-                width: 20%
-                }
+                background-color: rgba(255, 255, 255, 0.521);
             }
 
             .carousel {
                 display: flex;
                 overflow: scroll hidden;
                 scroll-behavior: smooth;
+                pointer-events: none; /*Fix*/
 
                 /*Esconder scrollbar*/
                 scrollbar-width: none; /*Firefox*/
