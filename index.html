@@ -14,7 +14,7 @@
 
         <link href='https://fonts.googleapis.com/css?family=Comforter' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="./js/scrollhover.js"></script>
+        <script src="./js/script.js"></script>
     </head>
 
     <body>
@@ -62,8 +62,22 @@
 
             <main class="main-index">
                 <section class="main-index__hero">
-                    <div class="main-index__hero__carousel shadow">
-                        <a href="#"><img src="./multimedia/carrusel1.jpg" alt="IMG"></a>
+                    <div class="main-index__hero__carouselcont shadow">
+                        <button class="carouselbtn-prev material-icons" onclick="carouselPrev()">chevron_left</button>
+
+                        <div class="carousel" id="carouselCont">
+                            <div class="carousel__element" id="carouselElement"> 
+                                <img src="./multimedia/carrusel1.jpg" alt="IMG">
+                            </div>
+                            <div class="carousel__element" id="carouselElement"> 
+                                <img src="./multimedia/carrusel2.jpg" alt="IMG">
+                            </div>
+                            <div class="carousel__element" id="carouselElement"> 
+                                <img src="./multimedia/carrusel3.jpg" alt="IMG">
+                            </div>
+                        </div>
+
+                        <button class="carouselbtn-next material-icons" onclick="carouselNext()">chevron_right</button>
                     </div>
 
                     <a class="main-index__hero__items shadow" href="#"><img src="./multimedia/remeras.webp" alt="IMG"></a>
@@ -195,8 +209,7 @@
                         
                                       
                     </div>
-                    <a href="./pages/tienda.html"></a>
-                    <input class="buttons shadow" type="button" value="VER TODOS LOS PRODUCTOS">
+                    <a class="buttons shadow" href="./pages/tienda.html">VER TODOS LOS PRODUCTOS</a>
                 </section>
 
                 <section>

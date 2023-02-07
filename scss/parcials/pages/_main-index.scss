@@ -12,22 +12,59 @@
         filter: grayscale(30%);
 
         & img {min-width: 100%; min-height: 100%;}
-    
-        &__carousel {
+        
+        &__carouselcont {
             justify-self: stretch; align-self: stretch;
             grid-area: span 1 / span 3; 
-    
-            animation-name: carousel;
-            animation-iteration-count: infinite;
-            animation-duration: 12s;
-            animation-timing-function:step-end;
-    
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
 
-            & a {visibility: hidden;}
-        }            
+            position: relative;
+            display: flex;
+
+            .carouselbtn-prev {
+                @include flexcol(b);
+                position: absolute;
+                height: 100%;
+                left: 0;
+                top: 0;
+                
+                transition: width 500ms;
+                background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.7) 100%);
+                box-shadow: none;
+                border: none;
+                
+                font-size: 4rem;
+                cursor: pointer;
+            }
+
+            .carouselbtn-next {
+                @extend .carouselbtn-prev;
+                left: auto;
+                right: 0;
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.7) 100%);
+            }
+
+            $h: &;
+            .carouselbtn-prev:hover, .carouselbtn-next:hover {
+                #{$h} .carouselbtn-next, #{$h} .carouselbtn-prev {
+                width: 20%
+                }
+            }
+
+            .carousel {
+                display: flex;
+                overflow: scroll hidden;
+                scroll-behavior: smooth;
+
+                /*Esconder scrollbar*/
+                scrollbar-width: none; /*Firefox*/
+                &::-webkit-scrollbar {display: none;} /* Chrome, Safari, Opera y Edge*/
+               
+                &__element {
+                    flex-shrink: 0;
+                    width: 100%;
+                }
+            }       
+        }     
     
         &__items {justify-self: stretch; align-self: stretch;}
     }

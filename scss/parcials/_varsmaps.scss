@@ -71,10 +71,9 @@ $colors: (
     ),
     card:(
         text: black,
-        background:#ececec
+        background:#f0f0f0
     ),
     grid:(
-        //background:linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 40%, rgba(224,224,224,1) 70%, rgb(197, 197, 197) 80%, rgb(230, 230, 230) 100%)
         background:repeating-linear-gradient( 45deg, #dfdfdf, #eeeeee 800px)
     )
 );

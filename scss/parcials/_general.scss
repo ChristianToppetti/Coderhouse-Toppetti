@@ -133,14 +133,19 @@ main {
         &__value {
             font-family: $itemshop-font;
             font-size: 1.5rem;
+
             & + span {
                 text-align: center;
                 font-size: 1rem;
-                font-family: $itemshop-font;
                 color: rgb(197, 197, 197);
-
-                @include breakpoint($small) {font-size: 1rem;}
+                
+                font-family: $itemshop-font;
+                & * {font-family: $itemshop-font;}
+                
+                @include breakpoint($small) {font-size: .75rem;}
             }
+
+            @include breakpoint($small) {font-size: 1rem;}
         }
 
         &::after {translate: 0 -3px;} /* Bug fix para el bug de grid-template-rows*/
