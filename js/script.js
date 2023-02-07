@@ -58,7 +58,7 @@ function carouselFix(scrollLeft, slidesContainer, imgWidth, isnext) { /* Para qu
   var errMargin = 10; /* Bug fix*/
 
   if(isnext) {
-    if ((scrollLeft + imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft + imgWidth) >= (slidesContainer.scrollLeft + imgWidth) - errMargin) {
+    if ((scrollLeft + imgWidth) - slidesContainer.scrollLeft <= errMargin || (scrollLeft + imgWidth) >= (slidesContainer.scrollLeft + imgWidth) - errMargin) {
       carTimeout = false;  /* Con estas 2 condiciones carTimeout se pone en false solo cuando el scroll termina de moverse*/
     }
     else {
@@ -66,7 +66,7 @@ function carouselFix(scrollLeft, slidesContainer, imgWidth, isnext) { /* Para qu
     }
   }
   else {
-    if ((scrollLeft - imgWidth) - slidesContainer.scrollLeft == 0 || (scrollLeft - imgWidth) <= (slidesContainer.scrollLeft - imgWidth) + errMargin) {
+    if ((scrollLeft - imgWidth) - slidesContainer.scrollLeft >= (errMargin*-1) || (scrollLeft - imgWidth) <= (slidesContainer.scrollLeft - imgWidth) + errMargin) {
       carTimeout = false;
     }
     else {

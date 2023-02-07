@@ -26,11 +26,10 @@ main {
     font-size: 1rem;
     font-weight: bold;
 
-    background-clip: padding-box;
     min-height: 3rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-    white-space: break-spaces;
+    white-space: nowrap;
     transition: background-color 300ms;
     cursor: pointer;
 
@@ -102,6 +101,8 @@ main {
             background-color:getmap($colors, "shopitems", "background");
             content: '';
         }
+
+        @include breakpoint($medium) {font-size: 1rem;}
     }
     
     &__img {
@@ -142,10 +143,11 @@ main {
                 font-family: $itemshop-font;
                 & * {font-family: $itemshop-font;}
                 
-                @include breakpoint($small) {font-size: .75rem;}
+                @include breakpoint($medium) {font-size: .75rem;}
+                @include breakpoint($small) {display: none;}
             }
 
-            @include breakpoint($small) {font-size: 1rem;}
+            @include breakpoint($medium) {font-size: 1rem;}
         }
 
         &::after {translate: 0 -3px;} /* Bug fix para el bug de grid-template-rows*/

@@ -97,7 +97,7 @@
 
             @include breakpoint($medium) {
                 position: absolute; width: 100%; 
-                height: 200px; /* Fix para la animacion de cerrado*/
+                height: 250px; /* Fix para la animacion de cerrado*/
                 &__btn {
                     justify-content: center;
                     border: 1.5px solid white;
