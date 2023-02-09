@@ -34,6 +34,12 @@
                 
                 font-size: 4rem;
                 cursor: pointer;
+                text-shadow: 0px 0px 2px white;
+
+                @include breakpoint($small) {
+                    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.4) 100%);
+                    font-size: 2rem;
+                }
             }
 
             .carouselbtn-next {
@@ -41,11 +47,17 @@
                 left: auto;
                 right: 0;
                 background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.7) 100%);
+                
+                @include breakpoint($small) {
+                    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.4) 100%);
+                }
             }
 
-            $h: &;
             .carouselbtn-prev:hover, .carouselbtn-next:hover {
-                background-color: rgba(255, 255, 255, 0.521);
+                background-color: rgba(255, 255, 255, 0.521);  
+                @include breakpoint($medium) {
+                    background-color: transparent;
+                }
             }
 
             .carousel {
@@ -61,6 +73,36 @@
                 &__element {
                     flex-shrink: 0;
                     width: 100%;
+
+                    position: relative; z-index: -1;
+                    &__text {
+                        position: absolute;
+                        left: 0; bottom: 0;
+                        
+                        width: 55%;
+                        font-size: 3rem;
+                        font-weight: bold;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 2rem 0 3rem 4.5rem;
+                        text-shadow: 4px 2px 1px #3b3b3b;
+                        color: #dfdfdf;
+
+                        @include breakpoint($large)
+                        {
+                            width: 70%;
+                        }
+                        @include breakpoint($medium)
+                        {
+                            font-size: 2rem;
+                        }
+                        @include breakpoint($small)
+                        {
+                            text-shadow: 2px 1px 4px #000000;
+                            padding: .5rem 0 2rem 2rem;
+                            width: 100%;
+                            font-size: 1.2rem;
+                        }
+                    }
                 }
             }       
         }     
