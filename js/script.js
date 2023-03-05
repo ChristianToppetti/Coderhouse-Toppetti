@@ -1,7 +1,7 @@
 /* Pre entrega: */
-// Ejemplo que use un codicional y un ciclo: Un algoritmo que cuenta cuantas veces y en que posicion aparece un caracter:*/
+// Ejemplo que use un codicional y un ciclo: Un algoritmo que cuente cuantas veces y en que posicion aparece un caracter:*/
 
-const validChar = (a) => (a.length == 1 && a != "" && a != " ") ? a : a = validChar(prompt("Escribe un(1) caracter."))
+const validChar = (a) => (a.length == 1 && a != "") ? a : a = validChar(prompt("Escribe un(1) caracter."))
 
 const formatList = (a) => {
   let string = ""
@@ -29,10 +29,14 @@ const formatOutput = (char, list) => {
   return string
 }
 
-const checkPrompt = (prompt, char) => {
+const checkPrompt = (string, char) => {
+  if(string.length == 0)
+  return checkPrompt(prompt("Escribe algo.."), char)
+
   let count = []
-  for(let i=0; i < prompt.length; i++) {
-    if(prompt.charAt(i).toUpperCase() == char.toUpperCase()) count.push(i+1)
+
+  for(let i=0; i < string.length; i++) {
+    if(string.charAt(i).toUpperCase() == char.toUpperCase()) count.push(i+1)
   }
 
   if(count.length == 0) return `No hubo coincidencias con el caracter "${char}"`
@@ -42,7 +46,8 @@ const checkPrompt = (prompt, char) => {
 
 let char = validChar(prompt("Escribe un caracter."))
 let string = checkPrompt(prompt("Escribe algo."), char)
-console.log(string)
+alert(string)
+//console.log(string)
 /* -- */
 
 
