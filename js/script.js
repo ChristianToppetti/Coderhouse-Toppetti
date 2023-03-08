@@ -1,46 +1,48 @@
-const validChar = (a) => (a.length == 1 && a != "") ? a : a = validChar(prompt("Escribe un(1) caracter."))
+const remId = 1
+const vestId = 2
+const calzId = 3
 
-const formatList = (a) => {
+const productos = [remId, "Remera Azul", 1234.41, vestId, "Vestido Blanco", 2134.33, calzId, "Botas Negras", 3213.60, 
+                  vestId, "Vestido Azul", 4234.42, remId, "Remera Blanca", 3134.80, calzId, "Sandalias Blancas", 2213.22,
+                  vestId, "Vestido Negro", 3210.52, calzId, "Zapatillas Negras", 2510.52, remId, "Remera Negra", 4510.52]
+
+const getProducts = (id) => {
+  if(id !== remId && id !== vestId && id !== calzId) 
+  return false
+  
   let string = ""
-  for(let i=0; i < a.length; i++) {
-    if(i < a.length-2) {
-      string = string + a[i] + ", "
-    } 
-    else {
-      string = string + a[i] + " y " + a[i+1]
-      break
+
+  for(let i=0; i < productos.length; i++) {
+    if(productos[i] === id) {
+      let name = productos[i+1]
+      let price = productos[i+2]
+
+      string = `${string} [${name}, ${price}$] `
     }
   }
+
   return string
 }
 
-const formatOutput = (char, list) => {
-  let string
+function showProducts() {
+  let products = getProducts(remId) + getProducts(vestId) + getProducts(calzId)
+  let stringPrompt = 
+  `Lista de procutos:
 
-  if(list.length > 1) {
-    string = `El caracter "${char}" aparece ${list.length} veces. Los caracteres numero: ${formatList(list)}`
-  }
-  else {
-    string = `El caracter "${char}" aparece ${list.length} vez. El caracter numero: ${list}`
-  }
-  return string
+  ${products}  
+
+  Ingrese:
+  1 - Para filtrar por Remeras
+  2 - Para filtrar por Vestidos
+  3 - Para filtrar por Calzado`
+
+  filterId = parseInt(prompt(stringPrompt))
+
+  products = getProducts(filterId)
+  if(!products)
+    alert("Filtro ingresado invalido")
+  else
+    alert(getProducts(filterId))
 }
 
-const checkPrompt = (string, char) => {
-  if(string.length == 0)
-  return checkPrompt(prompt("Escribe algo.."), char)
-
-  let count = []
-
-  for(let i=0; i < string.length; i++) {
-    if(string.charAt(i).toUpperCase() == char.toUpperCase()) count.push(i+1)
-  }
-
-  if(count.length == 0) return `No hubo coincidencias con el caracter "${char}"`
-
-  return formatOutput(char, count)
-}
-
-let char = validChar(prompt("Escribe un caracter."))
-let string = checkPrompt(prompt("Escribe algo."), char)
-alert(string)
+showProducts()
